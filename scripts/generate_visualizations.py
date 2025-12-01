@@ -342,7 +342,8 @@ def plot_stock_performance_war(data):
     )
 
     # Add vertical line for Oct 7
-    fig.add_vline(x='2023-10-07', line_dash="dash", line_color="red",
+    oct7_timestamp = pd.Timestamp('2023-10-07').timestamp() * 1000
+    fig.add_vline(x=oct7_timestamp, line_dash="dash", line_color="red",
                   annotation_text="7. oktober 2023", annotation_position="top left")
 
     fig.update_layout(height=600, hovermode='x unified')
@@ -458,7 +459,8 @@ def plot_nbim_timeseries(data):
     ))
 
     # Add vertical line for Oct 7
-    fig.add_vline(x='2023-10-07', line_dash="dash", line_color="black",
+    oct7_timestamp = pd.Timestamp('2023-10-07').timestamp() * 1000
+    fig.add_vline(x=oct7_timestamp, line_dash="dash", line_color="black",
                   annotation_text="7. oktober 2023")
 
     fig.update_layout(

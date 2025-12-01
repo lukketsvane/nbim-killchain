@@ -39,3 +39,9 @@ SYS037,Cardom Mortar System,Mortar System,Elbit Systems,Israel,Ground Fire Suppo
 SYS038,ATMOS 2000,Artillery System,Elbit Systems,Israel,Ground Fire Support,Yes
 SYS039,Skylark UAV,Tactical UAV,Elbit Systems,Israel,Tactical ISR,Yes
 SYS040,RQ-4 Global Hawk (shared intel),Strategic UAV,Northrop Grumman,USA,Strategic ISR,Shared Intel
+SYS041,Project Nimbus,Cloud Computing Infrastructure,Google/Amazon,USA,Intelligence/Logistics,Yes
+SYS042,AI Targeting Systems (Lavender/Gospel),AI Targeting,Multiple (Cloud provided by Big Tech),Israel/USA,Targeting,Yes
+SYS043,Volvo Trucks & Buses,Transport Vehicles,Volvo Group,Sweden,Logistics/Transport,Yes
+SYS044,Hyundai Excavators,Engineering Equipment,HD Hyundai,South Korea,Engineering/Demolition,Yes
+SYS045,155mm Artillery Shells,Munitions,Rheinmetall/GD/BAE,Germany/USA/UK,Munition,Yes
+SYS046,Settlement Housing Listings,Digital Platform,Airbnb/Booking.com,USA,Enabler (Occupation),Yes

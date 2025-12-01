@@ -65,3 +65,14 @@ COMP063,SYS036,D9 Bulldozer,Armor Kit,MFR012,IMI Systems,Armor,0.3
 COMP064,SYS037,Cardom,Complete System,MFR005,Elbit Systems,Artillery,2.5
 COMP065,SYS038,ATMOS 2000,Complete System,MFR005,Elbit Systems,Artillery,4.0
 COMP066,SYS039,Skylark,Complete System,MFR005,Elbit Systems,Tactical UAV,0.15
+COMP067,SYS040,RQ-4 Global Hawk (shared intel),Complete System,MFR004,Northrop Grumman,Strategic ISR,130.0
+COMP068,SYS041,Project Nimbus,Cloud Infrastructure,MFR023,Alphabet Inc.,Cloud Services,600.0
+COMP069,SYS041,Project Nimbus,Cloud Infrastructure,MFR024,Amazon,Cloud Services,600.0
+COMP070,SYS042,AI Targeting Systems (Lavender/Gospel),AI Infrastructure,MFR022,Microsoft,AI Infrastructure,100.0
+COMP071,SYS042,AI Targeting Systems (Lavender/Gospel),Integration,MFR005,Elbit Systems,System Integration,50.0
+COMP072,SYS043,Volvo Trucks & Buses,Heavy Transport,MFR025,Volvo Group,Logistics,0.200
+COMP073,SYS044,Hyundai Excavators,Excavator,MFR026,HD Hyundai,Engineering,0.300
+COMP074,SYS045,155mm Artillery Shells,Projectile,MFR021,Rheinmetall,Munition,0.004
+COMP075,SYS045,155mm Artillery Shells,Propellant,MFR009,General Dynamics,Munition,0.002
+COMP076,SYS046,Settlement Housing Listings,Platform Service,MFR027,Airbnb,Digital Service,5.0
+COMP077,SYS046,Settlement Housing Listings,Platform Service,MFR028,Booking.com,Digital Service,5.0
