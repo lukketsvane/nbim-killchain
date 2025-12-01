@@ -3,246 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDF Kill Chain Ownership Analysis</title>
+    <title>NBIM KILLCHAIN // Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="page-layout">
-        <!-- Header -->
+    <div class="container">
         <header>
-            <h1>IDF Kill Chain Ownership Analysis</h1>
-            <div class="subtitle">Transparens om eigarskap i militær infrastruktur brukt i Gaza-operasjonar.</div>
+            <div>
+                <h1><i data-lucide="shield-alert" class="text-red"></i> NBIM <span class="text-zinc-400">KILLCHAIN</span></h1>
+                <div class="subtitle">:: Fra norske sparepenger til militær operasjon ::</div>
+            </div>
+            <div id="nav-container"></div>
         </header>
 
-        <!-- Stats Overview -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">40</div>
-                <div class="stat-label">Militære system</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">20</div>
-                <div class="stat-label">Produsenter</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">51</div>
-                <div class="stat-label">Gaza-operasjonar</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">1.12%</div>
-                <div class="stat-label">NBIM Eigarskap</div>
-            </div>
-        </div>
-
-        <!-- Introduction -->
-        <section>
-            <h2>Om prosjektet</h2>
-            <p>Dette prosjektet dokumenterer eigarskapsstrukturar i den militære infrastrukturen som nyttast av Israel Defense Forces (IDF) i operasjonar mot Gaza.</p>
-            <div class="callout default">
-                <div class="callout-content">
-                    Målet er å kartlegge kven som profitterer på og har eigarskap i selskapa som produserer våpen, fly, missil og etterretningssystem.
+        <main class="grid">
+            
+            <!-- TOTAL EXPOSURE -->
+            <div class="col-span-2 row-span-2 card">
+                <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+                <div class="card-header">
+                    <span class="card-title"><i data-lucide="terminal" size="16"></i> TOTAL EKSPONERING</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Key Findings -->
-        <section>
-            <h2>Hovudfunn</h2>
-            
-            <h3>Top 5 Investorar</h3>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Investor</th>
-                            <th>Type</th>
-                            <th>Land</th>
-                            <th>Eigarskap %</th>
-                            <th>Investering (M USD)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>BlackRock</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>9.39%</td>
-                            <td>$137,335</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Vanguard Group</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>8.49%</td>
-                            <td>$127,725</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>State Street Corp</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>6.02%</td>
-                            <td>$79,152</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Capital Group</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>5.88%</td>
-                            <td>$72,340</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Fidelity Investments</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>2.89%</td>
-                            <td>$37,730</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Norges Bank Investment Management (NBIM)</h3>
-            <p>Oljefondet har ein berekna eigarskapsandel på <strong>1.12%</strong> av den totale kill chain-infrastrukturen.</p>
-            
-            <div class="callout yellow">
-                <div class="callout-content">
-                    <strong>Merk:</strong> NBIM ekskluderer Elbit Systems (0% eigarskap), men har betydelige andeler i amerikanske leverandørar.
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">TOTAL VERDI (USD)</span>
+                        <span class="stat-val" id="total-usd">...</span>
+                        <span class="stat-sub" id="total-nok">...</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">SNITT EIGERSKAP</span>
+                        <span class="stat-val" id="avg-stake">...</span>
+                        <span class="stat-sub">I KILL CHAIN SELSKAP</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">IDENTIFISERTE SELSKAP</span>
+                        <span class="stat-val text-red" id="company-count">...</span>
+                        <span class="stat-sub"> DIREKTE KNYTTET</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">STØRSTE POST</span>
+                        <span class="stat-val" id="top-stake-val">...</span>
+                        <span class="stat-sub" id="top-stake-name">...</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Selskap</th>
-                            <th>System</th>
-                            <th>NBIM Eigarskap</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Boeing</td>
-                            <td>F-15, Apache, JDAM</td>
-                            <td>1.60%</td>
-                        </tr>
-                        <tr>
-                            <td>Lockheed Martin</td>
-                            <td>F-35, F-16</td>
-                            <td>1.14%</td>
-                        </tr>
-                        <tr>
-                            <td>Northrop Grumman</td>
-                            <td>Radar, Elektronikk</td>
-                            <td>1.38%</td>
-                        </tr>
-                        <tr>
-                            <td>Caterpillar</td>
-                            <td>D9 Bulldozers</td>
-                            <td>1.29%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Data Files -->
-        <section>
-            <h2>Datagrunnlag</h2>
-            <p>Last ned strukturerte data (CSV) direkte.</p>
-            
-            <div class="file-link-group">
-                <a href="../data/military_systems.csv" class="file-link" download>
-                    <span>Militære system (CSV)</span>
-                </a>
-                <a href="../data/manufacturers.csv" class="file-link" download>
-                    <span>Produsenter (CSV)</span>
-                </a>
-                <a href="../data/major_shareholders.csv" class="file-link" download>
-                    <span>Hovudinvestorar (CSV)</span>
-                </a>
-                <a href="../data/infrastructure_ownership_analysis.csv" class="file-link" download>
-                    <span>Infrastrukturanalyse (CSV)</span>
-                </a>
-                 <a href="../data/gaza_operations_data.csv" class="file-link" download>
-                    <span>Gaza-operasjonar (CSV)</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Methodology -->
-        <section>
-            <h2>Metodologi</h2>
-            <div class="callout default">
-                <div class="callout-content">
-                    <strong>Berekning:</strong> Eigarskapsandelen er vekta basert på komponentverdi.
-                    <br>
-                    <em>Eigarskap = Σ (Komponentverdi × Produsenteigarskap) / Total Systemverdi</em>
-                </div>
-            </div>
-            <p>Datakjelder inkluderer SEC 13F filings, SIPRI, og FN-rapporter.</p>
-        </section>
-        
-        <section>
-            <h2>Visualiseringar</h2>
-            <p>Interaktive dashboard generert frå dataa.</p>
-            
-            <div class="viz-grid">
-                <div class="viz-item full-width">
-                    <h3>Top 10 Investorar</h3>
-                    <a href="https://i.ibb.co/sdbJRVXq/8e0e9b9ecbbe.png" target="_blank"><img src="https://i.ibb.co/sdbJRVXq/8e0e9b9ecbbe.png" alt="top_investors_bar.png" style="width:100%; height:auto; border-radius:4px;"></a>
+            <!-- KILL CHAIN SUMMARY LINK -->
+            <div class="col-span-2 lg:col-span-6 row-span-2 card">
+                <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+                <div class="card-header">
+                    <span class="card-title"><i data-lucide="activity" size="16"></i> SYSTEMATISK OVERSIKT</span>
+                    <span class="subtitle">F2T2EA SYKLUS</span>
                 </div>
                 
-                <div class="viz-item">
-                    <h3>NBIM vs. Andre</h3>
-                    <a href="https://i.ibb.co/kgLSNBjt/ac3064743b78.png" target="_blank"><img src="https://i.ibb.co/kgLSNBjt/ac3064743b78.png" alt="nbim_comparison.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item">
-                    <h3>Lockheed Martin Eigarskap</h3>
-                    <a href="https://i.ibb.co/wrcLCr1y/e91c63f344bf.png" target="_blank"><img src="https://i.ibb.co/wrcLCr1y/e91c63f344bf.png" alt="lockheed_ownership_pie.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item full-width">
-                    <h3>Gaza-operasjonar: Tidsserie</h3>
-                    <a href="https://i.ibb.co/M5C88fbV/e3d83eb9b8f0.png" target="_blank"><img src="https://i.ibb.co/M5C88fbV/e3d83eb9b8f0.png" alt="operations_timeline.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-                
-                <div class="viz-item">
-                    <h3>Våpentypar</h3>
-                    <a href="https://i.ibb.co/VY6sJsn5/654851eb837b.png" target="_blank"><img src="https://i.ibb.co/VY6sJsn5/654851eb837b.png" alt="munition_types_breakdown.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-                
-                <div class="viz-item">
-                    <h3>Systemtypar</h3>
-                    <a href="https://i.ibb.co/SDmpG48G/6ca6fbdbfd93.png" target="_blank"><img src="https://i.ibb.co/SDmpG48G/6ca6fbdbfd93.png" alt="system_types_distribution.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item full-width">
-                    <h3>Eigarskaps-Heatmap</h3>
-                    <a href="https://i.ibb.co/nqrtSYLc/778f7dfb8b35.png" target="_blank"><img src="https://i.ibb.co/nqrtSYLc/778f7dfb8b35.png" alt="ownership_heatmap.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item full-width">
-                    <h3>Detaljert Eigarskapstabell</h3>
-                    <a href="https://i.ibb.co/svZWT2xN/dc6bd2552216.png" target="_blank"><img src="https://i.ibb.co/svZWT2xN/dc6bd2552216.png" alt="interactive_ownership_table.png" style="width:100%; height:auto; border-radius:4px;"></a>
+                <!-- Simple CSS Bar Chart based on data -->
+                <div id="chain-bars" style="display: flex; flex-direction: column; gap: 0.75rem; justify-content: center; height: 100%;">
+                    <!-- Javascript will populate this -->
                 </div>
             </div>
-        </section>
+
+            <!-- TECH GIANT CALLOUT -->
+            <div class="col-span-2 lg:col-span-4 row-span-2 card dark">
+                <div class="corner tl"></div><div class="corner tr"></div>
+                <div class="card-header">
+                    <span class="card-title"><i data-lucide="cloud" size="16"></i> DIGITAL INFRASTRUKTUR</span>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 1rem;">
+                    <div style="font-size: 2.5rem; font-weight: 700;" id="tech-total">...</div>
+                    <div style="color: var(--text-zinc-400); line-height: 1.5;">
+                        Project Nimbus, Azure og AWS utgjør ryggraden i den moderne krigføringen. NBIM sine investeringer i Big Tech er no den største kilden til militær eksponering.
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECENT UPDATES -->
+            <div class="col-span-2 lg:col-span-4 row-span-2 card">
+                <div class="corner bl"></div><div class="corner br"></div>
+                <div class="card-header">
+                    <span class="card-title"><i data-lucide="radio" size="16"></i> SISTE OPPDATERINGER</span>
+                </div>
+                <div class="kc-list">
+                    <div class="kc-item" style="border:none; padding:0;">
+                        <div style="font-weight:700; color:var(--accent-red);">NY: VALERO ENERGY</div>
+                        <div style="font-size:0.7rem; color:var(--text-zinc-500);">NBIM øker post i leverandør av JP-8 flybensin.</div>
+                    </div>
+                    <div class="kc-item" style="border:none; padding:0; margin-top:0.5rem;">
+                        <div style="font-weight:700; color:var(--accent-red);">NY: RHEINMETALL</div>
+                        <div style="font-size:0.7rem; color:var(--text-zinc-500);">Massiv auke i 155mm produksjon koblet til NBIM.</div>
+                    </div>
+                    <div class="kc-item" style="border:none; padding:0; margin-top:0.5rem;">
+                        <div style="font-weight:700; color:var(--text-zinc-900);">PROJECT NIMBUS</div>
+                        <div style="font-size:0.7rem; color:var(--text-zinc-500);">Google/Amazon kontraktar bekrefta via lekkasjar.</div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
 
         <footer>
-            <p>
-                <a href="https://github.com/yourusername/nbim-killchain">GitHub Repository</a> • 
-                Data per 30. juni 2024 • 
-                Lisens: MIT
-            </p>
+            <div id="last-updated">DATA PR: ...</div>
+            <div>KILDER: SEC, SIPRI, ALBANESE REPORT</div>
         </footer>
     </div>
-    <script src="script.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Inline Dashboard Logic for simplicity (or move to assets/js/dashboard.js)
+        document.addEventListener('DOMContentLoaded', () => {
+            Utils.renderNavigation('index');
+            
+            const stats = nbimData.getStats();
+            
+            // Populate Top Stats
+            document.getElementById('total-usd').textContent = Utils.formatCurrency(stats.totalValueUsd);
+            document.getElementById('total-nok').textContent = Utils.formatNOK(stats.totalValueUsd);
+            document.getElementById('avg-stake').textContent = stats.avgStake + '%';
+            document.getElementById('company-count').textContent = stats.companyCount;
+            
+            // Find largest stake
+            const topCompany = nbimData.companies.reduce((prev, current) => (prev.nbim_pct > current.nbim_pct) ? prev : current);
+            document.getElementById('top-stake-val').textContent = topCompany.nbim_pct + '%';
+            document.getElementById('top-stake-name').textContent = topCompany.name;
+
+            // Tech Total
+            const techVal = nbimData.getStepTotal('find') + nbimData.getStepTotal('fix');
+            document.getElementById('tech-total').textContent = Utils.formatCurrency(techVal);
+
+            // Last Updated
+            document.getElementById('last-updated').textContent = "SIST OPPDATERT: " + nbimData.meta.lastUpdated;
+
+            // Generate Chain Bars
+            const container = document.getElementById('chain-bars');
+            Object.values(nbimData.killChainSteps).forEach(step => {
+                const val = nbimData.getStepTotal(step.name.toLowerCase());
+                // Calculate percentage width relative to total tech val (arbitrary max for visual scaling)
+                const width = Math.min(100, (val / 50000) * 100); 
+                
+                const html = `
+                    <div style="display:flex; align-items:center; font-size:0.7rem; gap:1rem;">
+                        <div style="width:3rem; font-weight:700;">${step.name}</div>
+                        <div style="flex:1; height:1.5rem; background:var(--bg-zinc-50); border:1px solid var(--border-zinc-200); position:relative;">
+                            <div style="width:${width}%; background:var(--text-zinc-900); height:100%;"></div>
+                            <div style="position:absolute; right:0.5rem; top:0.25rem; color:var(--text-zinc-500);">${Utils.formatCurrency(val)}</div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += html;
+            });
+        });
+    </script>
 </body>
 </html>
