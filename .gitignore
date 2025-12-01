@@ -52,3 +52,6 @@ Thumbs.db
 # Data backups
 *.bak
 *.backup
+
+# Temporary uploads
+.tmp.driveupload/

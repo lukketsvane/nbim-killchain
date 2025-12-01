@@ -4,511 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDF Kill Chain Ownership Analysis</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        .section {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #1D3557;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #E63946;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: #457B9D;
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #F1FAEE 0%, #A8DADC 100%);
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #1D3557;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #457B9D;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        thead {
-            background: #1D3557;
-            color: white;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tbody tr:hover {
-            background: #F1FAEE;
-        }
-
-        .highlight-nbim {
-            background: #FFE5E5 !important;
-            font-weight: bold;
-        }
-
-        .data-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .data-link {
-            background: #457B9D;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            transition: background 0.3s;
-        }
-
-        .data-link:hover {
-            background: #1D3557;
-        }
-
-        .warning-box {
-            background: #FFF3CD;
-            border-left: 4px solid #E63946;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .viz-container {
-            margin: 30px 0;
-        }
-
-        .viz-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .viz-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .viz-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .viz-card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .viz-card-title {
-            padding: 15px;
-            background: #F1FAEE;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            margin-top: 50px;
-            border-top: 1px solid #ddd;
-        }
-
-        .methodology {
-            background: #E9F5F2;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-
-        code {
-            background: #F1FAEE;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: monospace;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #E63946;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px 5px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #D62839;
-        }
-
-        .btn-secondary {
-            background: #457B9D;
-        }
-
-        .btn-secondary:hover {
-            background: #1D3557;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>IDF Kill Chain Ownership Analysis</h1>
-        <p>Transparens om eigarskap i militær infrastruktur brukt i Gaza-operasjonar</p>
-    </header>
+    <div class="page-layout">
+        <!-- Header -->
+        <header>
+            <h1>IDF Kill Chain Ownership Analysis</h1>
+            <div class="subtitle">Transparens om eigarskap i militær infrastruktur brukt i Gaza-operasjonar.</div>
+        </header>
 
-    <div class="container">
-        <!-- Introduction -->
-        <div class="section">
-            <h2>Om prosjektet</h2>
-            <p>Dette prosjektet dokumenterer eigarskapsstrukturar i den militære infrastrukturen som nyttast av Israel Defense Forces (IDF) i operasjonar mot Gaza. Gjennom systematisk datainnsamling og analyse kartlegg me kven som profitterer på og har eigarskap i selskapa som produserer våpen, fly, missil, etterretningssystem og anna militært utstyr.</p>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">40</div>
-                    <div class="stat-label">Militære system</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">20</div>
-                    <div class="stat-label">Produsenter</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">30</div>
-                    <div class="stat-label">Hovudinvestorar</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">51</div>
-                    <div class="stat-label">Gaza-operasjonar</div>
-                </div>
+        <!-- Stats Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">40</div>
+                <div class="stat-label">Militære system</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">20</div>
+                <div class="stat-label">Produsenter</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">51</div>
+                <div class="stat-label">Gaza-operasjonar</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1.12%</div>
+                <div class="stat-label">NBIM Eigarskap</div>
             </div>
         </div>
+
+        <!-- Introduction -->
+        <section>
+            <h2>Om prosjektet</h2>
+            <p>Dette prosjektet dokumenterer eigarskapsstrukturar i den militære infrastrukturen som nyttast av Israel Defense Forces (IDF) i operasjonar mot Gaza.</p>
+            <div class="callout default">
+                <div class="callout-content">
+                    Målet er å kartlegge kven som profitterer på og har eigarskap i selskapa som produserer våpen, fly, missil og etterretningssystem.
+                </div>
+            </div>
+        </section>
 
         <!-- Key Findings -->
-        <div class="section">
+        <section>
             <h2>Hovudfunn</h2>
-
-            <h3>Top 5 investorar i kill chain-infrastrukturen</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rang</th>
-                        <th>Investor</th>
-                        <th>Type</th>
-                        <th>Land</th>
-                        <th>Gjennomsnittleg eigarskap</th>
-                        <th>Total investering (millionar USD)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>BlackRock</td>
-                        <td>Asset Manager</td>
-                        <td>USA</td>
-                        <td>9.39%</td>
-                        <td>$137,335</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Vanguard Group</td>
-                        <td>Asset Manager</td>
-                        <td>USA</td>
-                        <td>8.49%</td>
-                        <td>$127,725</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>State Street Corporation</td>
-                        <td>Asset Manager</td>
-                        <td>USA</td>
-                        <td>6.02%</td>
-                        <td>$79,152</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Capital Group</td>
-                        <td>Asset Manager</td>
-                        <td>USA</td>
-                        <td>5.88%</td>
-                        <td>$72,340</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Fidelity Investments</td>
-                        <td>Asset Manager</td>
-                        <td>USA</td>
-                        <td>2.89%</td>
-                        <td>$37,730</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Norges Bank Investment Management (NBIM/Oljefondet)</h3>
-            <div class="warning-box">
-                <strong>NBIM sitt eigarskap i IDF kill chain-infrastruktur:</strong>
-                <ul style="margin-top: 10px; margin-left: 20px;">
-                    <li><strong>Gjennomsnittleg eigarskap:</strong> 1.12% av heile infrastrukturen</li>
-                    <li><strong>Total investering:</strong> $15,344 millionar USD</li>
-                    <li><strong>Status:</strong> Ekskluderer Elbit Systems (0% eigarskap)</li>
-                    <li><strong>Største behaldningar:</strong>
-                        <ul style="margin-top: 5px;">
-                            <li>Boeing (F-15, Apache, JDAM): 1.6% eigarskap</li>
-                            <li>Lockheed Martin (F-35, F-16): 1.14% eigarskap</li>
-                            <li>Northrop Grumman (radar, elektronikk): 1.38% eigarskap</li>
-                            <li>Caterpillar (D9 bulldozers): 1.29% eigarskap</li>
-                        </ul>
-                    </li>
-                </ul>
+            
+            <h3>Top 5 Investorar</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Investor</th>
+                            <th>Type</th>
+                            <th>Land</th>
+                            <th>Eigarskap %</th>
+                            <th>Investering (M USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>BlackRock</td>
+                            <td>Asset Manager</td>
+                            <td>USA</td>
+                            <td>9.39%</td>
+                            <td>$137,335</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Vanguard Group</td>
+                            <td>Asset Manager</td>
+                            <td>USA</td>
+                            <td>8.49%</td>
+                            <td>$127,725</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>State Street Corp</td>
+                            <td>Asset Manager</td>
+                            <td>USA</td>
+                            <td>6.02%</td>
+                            <td>$79,152</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Capital Group</td>
+                            <td>Asset Manager</td>
+                            <td>USA</td>
+                            <td>5.88%</td>
+                            <td>$72,340</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Fidelity Investments</td>
+                            <td>Asset Manager</td>
+                            <td>USA</td>
+                            <td>2.89%</td>
+                            <td>$37,730</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
+
+            <h3>Norges Bank Investment Management (NBIM)</h3>
+            <p>Oljefondet har ein berekna eigarskapsandel på <strong>1.12%</strong> av den totale kill chain-infrastrukturen.</p>
+            
+            <div class="callout yellow">
+                <div class="callout-content">
+                    <strong>Merk:</strong> NBIM ekskluderer Elbit Systems (0% eigarskap), men har betydelige andeler i amerikanske leverandørar.
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selskap</th>
+                            <th>System</th>
+                            <th>NBIM Eigarskap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Boeing</td>
+                            <td>F-15, Apache, JDAM</td>
+                            <td>1.60%</td>
+                        </tr>
+                        <tr>
+                            <td>Lockheed Martin</td>
+                            <td>F-35, F-16</td>
+                            <td>1.14%</td>
+                        </tr>
+                        <tr>
+                            <td>Northrop Grumman</td>
+                            <td>Radar, Elektronikk</td>
+                            <td>1.38%</td>
+                        </tr>
+                        <tr>
+                            <td>Caterpillar</td>
+                            <td>D9 Bulldozers</td>
+                            <td>1.29%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
         <!-- Data Files -->
-        <div class="section">
+        <section>
             <h2>Datagrunnlag</h2>
-            <p>Alle data er tilgjengelege som strukturerte CSV-filer:</p>
-
-            <div class="data-links">
-                <a href="../data/military_systems.csv" class="data-link" download>
-                    📋 Militære system
+            <p>Last ned strukturerte data (CSV) direkte.</p>
+            
+            <div class="file-link-group">
+                <a href="../data/military_systems.csv" class="file-link" download>
+                    <span>Militære system (CSV)</span>
                 </a>
-                <a href="../data/manufacturers.csv" class="data-link" download>
-                    🏭 Produsenter
+                <a href="../data/manufacturers.csv" class="file-link" download>
+                    <span>Produsenter (CSV)</span>
                 </a>
-                <a href="../data/major_shareholders.csv" class="data-link" download>
-                    💼 Hovudinvestorar
+                <a href="../data/major_shareholders.csv" class="file-link" download>
+                    <span>Hovudinvestorar (CSV)</span>
                 </a>
-                <a href="../data/ownership_stakes.csv" class="data-link" download>
-                    📊 Eigarskapdata
+                <a href="../data/infrastructure_ownership_analysis.csv" class="file-link" download>
+                    <span>Infrastrukturanalyse (CSV)</span>
                 </a>
-                <a href="../data/system_components.csv" class="data-link" download>
-                    🔧 Systemkomponentar
-                </a>
-                <a href="../data/infrastructure_ownership_analysis.csv" class="data-link" download>
-                    📈 Infrastrukturanalyse
-                </a>
-                <a href="../data/gaza_operations_data.csv" class="data-link" download>
-                    💣 Gaza-operasjonar
+                 <a href="../data/gaza_operations_data.csv" class="file-link" download>
+                    <span>Gaza-operasjonar (CSV)</span>
                 </a>
             </div>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="https://github.com/yourusername/nbim-killchain" class="btn">
-                    📦 Last ned alle data (GitHub)
-                </a>
-                <a href="../README.md" class="btn btn-secondary">
-                    📖 Les full dokumentasjon
-                </a>
-            </div>
-        </div>
+        </section>
 
         <!-- Methodology -->
-        <div class="section">
+        <section>
             <h2>Metodologi</h2>
-
-            <div class="methodology">
-                <h3>Korleis me bereknar eigarskapsandel</h3>
-                <p>Eigarskapsandelen i infrastrukturen er berekna ved:</p>
-                <ol style="margin-left: 20px; margin-top: 10px;">
-                    <li><strong>Komponentvekting:</strong> Kvar våpensystem er dekomponert i komponentar (airframe, motor, radar, etc.)</li>
-                    <li><strong>Verdivekting:</strong> Kvar komponent er vekta etter estimert verdi</li>
-                    <li><strong>Eigarskapsmapping:</strong> Eigarskapsandel i produsenten av kvar komponent</li>
-                    <li><strong>Aggregering:</strong> Samla eigarskap på tvers av alle system</li>
-                </ol>
-
-                <p style="margin-top: 15px;"><strong>Eksempel - F-35I Adir:</strong></p>
-                <ul style="margin-left: 20px;">
-                    <li>Airframe (Lockheed Martin): $85M - 60.7%</li>
-                    <li>Motor (Pratt & Whitney/RTX): $18M - 12.9%</li>
-                    <li>Radar (Northrop Grumman): $12M - 8.6%</li>
-                    <li>Avionikk (Collins/RTX): $8.5M - 6.1%</li>
-                    <li>Israelske system (Elbit): $5M - 3.6%</li>
-                </ul>
+            <div class="callout default">
+                <div class="callout-content">
+                    <strong>Berekning:</strong> Eigarskapsandelen er vekta basert på komponentverdi.
+                    <br>
+                    <em>Eigarskap = Σ (Komponentverdi × Produsenteigarskap) / Total Systemverdi</em>
+                </div>
             </div>
-
-            <h3>Datakjelder</h3>
-            <ul style="margin-left: 20px;">
-                <li><strong>Eigarskapdata:</strong> SEC 13F filings, Bloomberg, FactSet (per Q2 2024)</li>
-                <li><strong>Våpensystemdata:</strong> SIPRI, Jane's Defence, IDF offentlege kjelder</li>
-                <li><strong>Gaza-operasjonar:</strong> FN OCHA, B'Tselem, Human Rights Watch</li>
-                <li><strong>Kontraktar:</strong> US Foreign Military Sales (FMS), israelske forsvarsbudsjett</li>
-            </ul>
-        </div>
-
-        <!-- Visualizations -->
-        <div class="section">
+            <p>Datakjelder inkluderer SEC 13F filings, SIPRI, og FN-rapporter.</p>
+        </section>
+        
+        <section>
             <h2>Visualiseringar</h2>
-            <p>Interaktive visualiseringar kan genererast ved å køyre Python-scripta:</p>
+            <p>Interaktive dashboard generert frå dataa.</p>
+            
+            <div class="viz-grid">
+                <div class="viz-item full-width">
+                    <h3>Top 10 Investorar</h3>
+                    <iframe src="viz/top_investors_bar.html" loading="lazy"></iframe>
+                </div>
+                
+                <div class="viz-item">
+                    <h3>NBIM vs. Andre</h3>
+                    <iframe src="viz/nbim_comparison.html" loading="lazy"></iframe>
+                </div>
 
-            <code>python scripts/generate_visualizations.py</code>
+                <div class="viz-item">
+                    <h3>Lockheed Martin Eigarskap</h3>
+                    <iframe src="viz/lockheed_ownership_pie.html" loading="lazy"></iframe>
+                </div>
 
-            <p style="margin-top: 15px;">Dette genererer:</p>
-            <ul style="margin-left: 20px;">
-                <li>Bar chart av top investorar</li>
-                <li>Heatmap av eigarskap på tvers av infrastrukturtypar</li>
-                <li>NBIM-samanlikning med andre investorar</li>
-                <li>Tidslinje av Gaza-operasjonar med våpenkostnad</li>
-                <li>Breakdown av våpentypar brukt</li>
-                <li>Interaktiv eigarskapstabell</li>
-            </ul>
-        </div>
+                <div class="viz-item full-width">
+                    <h3>Gaza-operasjonar: Tidsserie</h3>
+                    <iframe src="viz/operations_timeline.html" loading="lazy"></iframe>
+                </div>
+                
+                <div class="viz-item">
+                    <h3>Våpentypar</h3>
+                    <iframe src="viz/munition_types_breakdown.html" loading="lazy"></iframe>
+                </div>
+                
+                <div class="viz-item">
+                    <h3>Systemtypar</h3>
+                    <iframe src="viz/system_types_distribution.html" loading="lazy"></iframe>
+                </div>
 
-        <!-- Analysis Tools -->
-        <div class="section">
-            <h2>Analyseverktøy</h2>
+                <div class="viz-item full-width">
+                    <h3>Eigarskaps-Heatmap</h3>
+                    <iframe src="viz/ownership_heatmap.html" loading="lazy"></iframe>
+                </div>
 
-            <h3>Køyre analysane</h3>
-            <p>Installer Python og dependencies:</p>
-            <code>pip install -r requirements.txt</code>
-
-            <p style="margin-top: 15px;">Køyre hovudanalyse:</p>
-            <code>python scripts/analyze_ownership.py</code>
-
-            <p style="margin-top: 15px;">Generer visualiseringar:</p>
-            <code>python scripts/generate_visualizations.py</code>
-
-            <h3>Output</h3>
-            <p>Analysane genererer:</p>
-            <ul style="margin-left: 20px;">
-                <li><code>output/summary_statistics.json</code> - Oppsummerande statistikk</li>
-                <li><code>output/system_ownership_by_investor.csv</code> - Eigarskap per system</li>
-                <li><code>output/munitions_attributed_to_investors.csv</code> - Våpenbruk tilskriven investorar</li>
-                <li><code>output/visualizations/</code> - Alle grafar og visualiseringar</li>
-            </ul>
-        </div>
-
-        <!-- Disclaimer -->
-        <div class="section">
-            <h2>Viktige presiseringar</h2>
-
-            <div class="warning-box">
-                <h3>Limitasjonar</h3>
-                <ul style="margin-left: 20px;">
-                    <li><strong>Israelske statsselskap:</strong> IAI og Rafael er statseigna - eigarskapsstruktur ikkje offentleg</li>
-                    <li><strong>Indirekte eigarskap:</strong> ETF-ar og indeksfond gir indirekte eksponering</li>
-                    <li><strong>Dynamiske data:</strong> Eigarskap endrar seg kvartalsvis</li>
-                    <li><strong>Estimat:</strong> Våpenbruk og komponentverdi er estimat basert på offentleg info</li>
-                </ul>
+                <div class="viz-item full-width">
+                    <h3>Detaljert Eigarskapstabell</h3>
+                    <iframe src="viz/interactive_ownership_table.html" loading="lazy" style="height: 800px;"></iframe>
+                </div>
             </div>
+        </section>
 
-            <h3>Etiske konsiderasjonar</h3>
-            <p>Dette prosjektet er <strong>IKKJE</strong>:</p>
-            <ul style="margin-left: 20px;">
-                <li>Ein investeringsråd</li>
-                <li>Ein politisk kampanje mot spesifikke selskap</li>
-                <li>Ein uttømmande juridisk analyse</li>
-            </ul>
-
-            <p style="margin-top: 15px;">Dette prosjektet <strong>ER</strong>:</p>
-            <ul style="margin-left: 20px;">
-                <li>Eit forsøk på transparens om kven som profitterer på krig</li>
-                <li>Grunnlag for informerte avgjerder for investorar og politikarar</li>
-                <li>Dokumentasjon av samanheng mellom finans og militær infrastruktur</li>
-            </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="section">
-            <h2>Bidrag og kontakt</h2>
-            <p>Dette er open source research. Bidrag er velkomne:</p>
-
-            <ul style="margin-left: 20px;">
-                <li><strong>Dataforbetring:</strong> Oppdaterte eigarskapstal, fleire våpensystem</li>
-                <li><strong>Metodologi:</strong> Forbetra berekningsmodelar</li>
-                <li><strong>Kjelder:</strong> Ytterlegare verifisering av data</li>
-                <li><strong>Oversettingar:</strong> Dokumentasjon på fleire språk</li>
-            </ul>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="https://github.com/yourusername/nbim-killchain/issues" class="btn">
-                    💬 Rapporter problem eller forslag
-                </a>
-                <a href="https://github.com/yourusername/nbim-killchain" class="btn btn-secondary">
-                    🔗 Sjå GitHub Repository
-                </a>
-            </div>
-        </div>
+        <footer>
+            <p>
+                <a href="https://github.com/yourusername/nbim-killchain">GitHub Repository</a> • 
+                Data per 30. juni 2024 • 
+                Lisens: MIT
+            </p>
+        </footer>
     </div>
-
-    <footer>
-        <p><strong>IDF Kill Chain Ownership Analysis</strong></p>
-        <p>Data: CC BY 4.0 | Kode: MIT License</p>
-        <p>Sist oppdatert: Desember 2024 | Datagrunnlag: Per 30. juni 2024</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
