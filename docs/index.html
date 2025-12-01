@@ -3,246 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDF Kill Chain Ownership Analysis</title>
+    <title>GAZA KILL CHAIN ARCHITECT v1.0</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="page-layout">
-        <!-- Header -->
+    <div class="container">
+        <!-- HEADER -->
         <header>
-            <h1>IDF Kill Chain Ownership Analysis</h1>
-            <div class="subtitle">Transparens om eigarskap i militær infrastruktur brukt i Gaza-operasjonar.</div>
+            <div class="title-group">
+                <h1 class="text-xl md:text-2xl font-bold uppercase tracking-tighter">
+                    <i data-lucide="shield-alert" class="text-red-600"></i>
+                    GAZA_KILL_CHAIN_<span class="text-zinc-400">ARCHITECT_V1.0</span>
+                </h1>
+                <p class="text-zinc-500 text-xs mt-1 uppercase tracking-widest">
+                    :: Strukturelt eierskap & operasjonell dataanalyse ::
+                </p>
+            </div>
+            <div class="tab-group">
+                <button class="tab-btn active">DASHBOARD_VIEW</button>
+                <button class="tab-btn">RAW_DATA_MATRIX</button>
+            </div>
         </header>
 
-        <!-- Stats Overview -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">40</div>
-                <div class="stat-label">Militære system</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">20</div>
-                <div class="stat-label">Produsenter</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">51</div>
-                <div class="stat-label">Gaza-operasjonar</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">1.12%</div>
-                <div class="stat-label">NBIM Eigarskap</div>
-            </div>
-        </div>
+        <!-- MAIN GRID -->
+        <main class="bento-grid">
 
-        <!-- Introduction -->
-        <section>
-            <h2>Om prosjektet</h2>
-            <p>Dette prosjektet dokumenterer eigarskapsstrukturar i den militære infrastrukturen som nyttast av Israel Defense Forces (IDF) i operasjonar mot Gaza.</p>
-            <div class="callout default">
-                <div class="callout-content">
-                    Målet er å kartlegge kven som profitterer på og har eigarskap i selskapa som produserer våpen, fly, missil og etterretningssystem.
+            <!-- KPI BLOCK (2x2) -->
+            <div class="col-span-2 row-span-2">
+                <div class="bento-card h-full">
+                    <div class="corner corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+                    
+                    <div class="card-header">
+                        <div class="flex flex-col">
+                            <h3 class="card-title"><i data-lucide="terminal" size="14"></i> HOVEDINDIKATORER</h3>
+                        </div>
+                    </div>
+
+                    <div class="stats-container">
+                        <div class="stat-badge">
+                            <span class="stat-label">NBIM EXP</span>
+                            <span class="stat-value">1.12%</span>
+                            <span class="stat-trend">VEKTET SNITT</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-label">BLK EXP</span>
+                            <span class="stat-value">9.39%</span>
+                            <span class="stat-trend">TOPP EIERSKAP</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-label">OPS COUNT</span>
+                            <span class="stat-value text-red-600">1,240</span>
+                            <span class="stat-trend">REGISTRERT</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-label">EST. COST</span>
+                            <span class="stat-value text-zinc-500">$450M</span>
+                            <span class="stat-trend">UTVALGT DATA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Key Findings -->
-        <section>
-            <h2>Hovudfunn</h2>
+            <!-- KILL CHAIN SEQUENCE (4x2) -->
+            <div class="col-span-2 lg:col-span-4 row-span-2">
+                <div class="bento-card h-full">
+                    <div class="corner corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+                    
+                    <div class="card-header">
+                        <div class="flex flex-col">
+                            <h3 class="card-title"><i data-lucide="crosshair" size="14"></i> KILL_CHAIN_SEQUENCE</h3>
+                            <span class="card-subtitle">F2T2EA SYKLUS & NBIM EIERSKAP</span>
+                        </div>
+                        <div class="warning-badge">Alert: High Exposure</div>
+                    </div>
+
+                    <div class="kill-chain-list">
+                        <!-- FIND -->
+                        <div class="kill-chain-step">
+                            <div class="step-row">
+                                <span class="step-id">01 FIND</span>
+                                <div class="step-bar-container">
+                                    <div class="step-bar-fill" style="width: 20.4%;"></div>
+                                    <div class="threshold-line"></div>
+                                    <span class="step-detail">Intel/Surveillance</span>
+                                </div>
+                                <span class="font-bold">1.36%</span>
+                            </div>
+                        </div>
+                        <!-- FIX -->
+                        <div class="kill-chain-step">
+                            <div class="step-row">
+                                <span class="step-id">02 FIX</span>
+                                <div class="step-bar-container">
+                                    <div class="step-bar-fill" style="width: 20.5%;"></div>
+                                    <div class="threshold-line"></div>
+                                    <span class="step-detail">Target Generation</span>
+                                </div>
+                                <span class="font-bold">1.40%</span>
+                            </div>
+                        </div>
+                         <!-- TRACK -->
+                         <div class="kill-chain-step">
+                            <div class="step-row">
+                                <span class="step-id">03 TRACK</span>
+                                <div class="step-bar-container">
+                                    <div class="step-bar-fill" style="width: 18.5%;"></div>
+                                    <div class="threshold-line"></div>
+                                    <span class="step-detail">Lock on</span>
+                                </div>
+                                <span class="font-bold">1.23%</span>
+                            </div>
+                        </div>
+                        <!-- TARGET -->
+                        <div class="kill-chain-step">
+                            <div class="step-row">
+                                <span class="step-id">04 TARGET</span>
+                                <div class="step-bar-container">
+                                    <div class="step-bar-fill" style="width: 20.2%;"></div>
+                                    <div class="threshold-line"></div>
+                                    <span class="step-detail">Command & Control</span>
+                                </div>
+                                <span class="font-bold">1.35%</span>
+                            </div>
+                        </div>
+                        <!-- ENGAGE -->
+                        <div class="kill-chain-step">
+                            <div class="step-row">
+                                <span class="step-id">05 ENGAGE</span>
+                                <div class="step-bar-container">
+                                    <div class="step-bar-fill" style="width: 17.2%;"></div>
+                                    <div class="threshold-line"></div>
+                                    <span class="step-detail">Kinetic Strike</span>
+                                </div>
+                                <span class="font-bold">1.15%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-xs text-zinc-400 mt-auto pt-2 border-t border-zinc-100 text-center">
+                        * Rød linje indikerer 1.25% terskelverdi (Global avg)
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPERATIONS TIMELINE (2x2) -->
+            <div class="col-span-2 row-span-2">
+                <div class="bento-card h-full">
+                    <div class="corner corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+                    <div class="card-header">
+                        <div class="flex flex-col">
+                            <h3 class="card-title"><i data-lucide="activity" size="14"></i> KOSTNAD_TIDSLINJE</h3>
+                            <span class="card-subtitle">MILL USD / OPERASJON</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-height: 0;">
+                        <a href="https://i.ibb.co/M5C88fbV/e3d83eb9b8f0.png" target="_blank">
+                            <img src="https://i.ibb.co/M5C88fbV/e3d83eb9b8f0.png" class="card-image" alt="Timeline">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSTITUTIONAL OWNERSHIP (4x2) -->
+            <div class="col-span-2 lg:col-span-4 row-span-2">
+                <div class="bento-card h-full">
+                    <div class="corner corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+                    <div class="card-header">
+                        <div class="flex flex-col">
+                            <h3 class="card-title"><i data-lucide="share-2" size="14"></i> INSTITUSJONELT_EIERSKAP</h3>
+                            <span class="card-subtitle">SAMMENLIGNING AV AKTØRER</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-height: 0;">
+                        <a href="https://i.ibb.co/kgLSNBjt/ac3064743b78.png" target="_blank">
+                            <img src="https://i.ibb.co/kgLSNBjt/ac3064743b78.png" class="card-image" alt="NBIM vs Others">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SYSTEM DEEP DIVE (4x2) -->
+            <div class="col-span-2 lg:col-span-4 row-span-2">
+                <div class="bento-card h-full bg-zinc-50">
+                    <div class="corner corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+                    <div class="card-header">
+                        <div class="flex flex-col">
+                            <h3 class="card-title"><i data-lucide="cpu" size="14"></i> SYSTEM_FOKUS: AI_CLOUD_INFRA</h3>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 h-full gap-4">
+                        <div class="flex flex-col gap-4">
+                            <div class="bg-white border border-zinc-200 p-3 shadow-sm">
+                                <div class="text-xs text-zinc-500 uppercase mb-1">Målutvelgelse (Targeting)</div>
+                                <div class="text-lg font-bold text-black mb-1">UNIT 8200 / "GOSPEL"</div>
+                                <div class="text-xs text-zinc-600 font-mono">
+                                    Lev: Google (Project Nimbus), AWS, Intel, Nvidia
+                                </div>
+                            </div>
+                            <div class="text-xs text-zinc-500 leading-relaxed font-mono">
+                                &gt; SYSTEM_ANALYSIS:<br>
+                                Skybasert infrastruktur er unntatt fra de fleste etiske retningslinjer for våpenproduksjon. 
+                                Likevel er dette "hjernen" i Kill Chain-prosessen.
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="bg-white border border-zinc-200 p-2 flex justify-between items-center">
+                                <span class="text-xs text-zinc-500">NBIM STAKE</span>
+                                <span class="text-xl font-bold text-black">~1.40%</span>
+                            </div>
+                            <div class="bg-white border border-zinc-200 p-2 flex justify-between items-center">
+                                 <span class="text-xs text-zinc-500">EST. UNITS</span>
+                                 <span class="text-xl font-bold text-zinc-300">N/A</span>
+                            </div>
+                            <div class="bg-red-50 border border-red-100 p-2 flex justify-between items-center">
+                                 <span class="text-xs text-red-600">ETHICAL FLAG</span>
+                                 <span class="text-xs font-bold text-red-700">DUAL USE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- MUNITIONS (2x2) -->
+             <div class="col-span-2 row-span-2">
+                <div class="bento-card h-full">
+                    <div class="corner corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+                    <div class="card-header">
+                        <div class="flex flex-col">
+                            <h3 class="card-title"><i data-lucide="target" size="14"></i> VÅPEN_FORDELING</h3>
+                            <span class="card-subtitle">TYPE & KOSTNAD</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-height: 0;">
+                        <a href="https://i.ibb.co/VY6sJsn5/654851eb837b.png" target="_blank">
+                            <img src="https://i.ibb.co/VY6sJsn5/654851eb837b.png" class="card-image" alt="Munitions">
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <h3>Top 5 Investorar</h3>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Investor</th>
-                            <th>Type</th>
-                            <th>Land</th>
-                            <th>Eigarskap %</th>
-                            <th>Investering (M USD)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>BlackRock</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>9.39%</td>
-                            <td>$137,335</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Vanguard Group</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>8.49%</td>
-                            <td>$127,725</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>State Street Corp</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>6.02%</td>
-                            <td>$79,152</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Capital Group</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>5.88%</td>
-                            <td>$72,340</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Fidelity Investments</td>
-                            <td>Asset Manager</td>
-                            <td>USA</td>
-                            <td>2.89%</td>
-                            <td>$37,730</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Norges Bank Investment Management (NBIM)</h3>
-            <p>Oljefondet har ein berekna eigarskapsandel på <strong>1.12%</strong> av den totale kill chain-infrastrukturen.</p>
-            
-            <div class="callout yellow">
-                <div class="callout-content">
-                    <strong>Merk:</strong> NBIM ekskluderer Elbit Systems (0% eigarskap), men har betydelige andeler i amerikanske leverandørar.
+             <!-- HEATMAP (4x2) -->
+             <div class="col-span-2 lg:col-span-4 row-span-2">
+                <div class="bento-card h-full">
+                    <div class="corner corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+                    <div class="card-header">
+                        <div class="flex flex-col">
+                            <h3 class="card-title"><i data-lucide="layers" size="14"></i> EIGERSKAPS_HEATMAP</h3>
+                            <span class="card-subtitle">EKSPONERING ETTER SEKTOR</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-height: 0;">
+                        <a href="https://i.ibb.co/nqrtSYLc/778f7dfb8b35.png" target="_blank">
+                            <img src="https://i.ibb.co/nqrtSYLc/778f7dfb8b35.png" class="card-image" alt="Heatmap">
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Selskap</th>
-                            <th>System</th>
-                            <th>NBIM Eigarskap</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Boeing</td>
-                            <td>F-15, Apache, JDAM</td>
-                            <td>1.60%</td>
-                        </tr>
-                        <tr>
-                            <td>Lockheed Martin</td>
-                            <td>F-35, F-16</td>
-                            <td>1.14%</td>
-                        </tr>
-                        <tr>
-                            <td>Northrop Grumman</td>
-                            <td>Radar, Elektronikk</td>
-                            <td>1.38%</td>
-                        </tr>
-                        <tr>
-                            <td>Caterpillar</td>
-                            <td>D9 Bulldozers</td>
-                            <td>1.29%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        </main>
 
-        <!-- Data Files -->
-        <section>
-            <h2>Datagrunnlag</h2>
-            <p>Last ned strukturerte data (CSV) direkte.</p>
-            
-            <div class="file-link-group">
-                <a href="../data/military_systems.csv" class="file-link" download>
-                    <span>Militære system (CSV)</span>
-                </a>
-                <a href="../data/manufacturers.csv" class="file-link" download>
-                    <span>Produsenter (CSV)</span>
-                </a>
-                <a href="../data/major_shareholders.csv" class="file-link" download>
-                    <span>Hovudinvestorar (CSV)</span>
-                </a>
-                <a href="../data/infrastructure_ownership_analysis.csv" class="file-link" download>
-                    <span>Infrastrukturanalyse (CSV)</span>
-                </a>
-                 <a href="../data/gaza_operations_data.csv" class="file-link" download>
-                    <span>Gaza-operasjonar (CSV)</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Methodology -->
-        <section>
-            <h2>Metodologi</h2>
-            <div class="callout default">
-                <div class="callout-content">
-                    <strong>Berekning:</strong> Eigarskapsandelen er vekta basert på komponentverdi.
-                    <br>
-                    <em>Eigarskap = Σ (Komponentverdi × Produsenteigarskap) / Total Systemverdi</em>
-                </div>
-            </div>
-            <p>Datakjelder inkluderer SEC 13F filings, SIPRI, og FN-rapporter.</p>
-        </section>
-        
-        <section>
-            <h2>Visualiseringar</h2>
-            <p>Interaktive dashboard generert frå dataa.</p>
-            
-            <div class="viz-grid">
-                <div class="viz-item full-width">
-                    <h3>Top 10 Investorar</h3>
-                    <a href="https://i.ibb.co/sdbJRVXq/8e0e9b9ecbbe.png" target="_blank"><img src="https://i.ibb.co/sdbJRVXq/8e0e9b9ecbbe.png" alt="top_investors_bar.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-                
-                <div class="viz-item">
-                    <h3>NBIM vs. Andre</h3>
-                    <a href="https://i.ibb.co/kgLSNBjt/ac3064743b78.png" target="_blank"><img src="https://i.ibb.co/kgLSNBjt/ac3064743b78.png" alt="nbim_comparison.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item">
-                    <h3>Lockheed Martin Eigarskap</h3>
-                    <a href="https://i.ibb.co/wrcLCr1y/e91c63f344bf.png" target="_blank"><img src="https://i.ibb.co/wrcLCr1y/e91c63f344bf.png" alt="lockheed_ownership_pie.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item full-width">
-                    <h3>Gaza-operasjonar: Tidsserie</h3>
-                    <a href="https://i.ibb.co/M5C88fbV/e3d83eb9b8f0.png" target="_blank"><img src="https://i.ibb.co/M5C88fbV/e3d83eb9b8f0.png" alt="operations_timeline.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-                
-                <div class="viz-item">
-                    <h3>Våpentypar</h3>
-                    <a href="https://i.ibb.co/VY6sJsn5/654851eb837b.png" target="_blank"><img src="https://i.ibb.co/VY6sJsn5/654851eb837b.png" alt="munition_types_breakdown.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-                
-                <div class="viz-item">
-                    <h3>Systemtypar</h3>
-                    <a href="https://i.ibb.co/SDmpG48G/6ca6fbdbfd93.png" target="_blank"><img src="https://i.ibb.co/SDmpG48G/6ca6fbdbfd93.png" alt="system_types_distribution.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item full-width">
-                    <h3>Eigarskaps-Heatmap</h3>
-                    <a href="https://i.ibb.co/nqrtSYLc/778f7dfb8b35.png" target="_blank"><img src="https://i.ibb.co/nqrtSYLc/778f7dfb8b35.png" alt="ownership_heatmap.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-
-                <div class="viz-item full-width">
-                    <h3>Detaljert Eigarskapstabell</h3>
-                    <a href="https://i.ibb.co/svZWT2xN/dc6bd2552216.png" target="_blank"><img src="https://i.ibb.co/svZWT2xN/dc6bd2552216.png" alt="interactive_ownership_table.png" style="width:100%; height:auto; border-radius:4px;"></a>
-                </div>
-            </div>
-        </section>
-
+        <!-- FOOTER -->
         <footer>
-            <p>
-                <a href="https://github.com/yourusername/nbim-killchain">GitHub Repository</a> • 
-                Data per 30. juni 2024 • 
-                Lisens: MIT
-            </p>
+            <div>STATUS: SYSTEM_ACTIVE</div>
+            <div>DATA_SOURCE: GAZA_OPS_DATA.CSV / INFRA_OWNERSHIP.CSV</div>
+            <div>SEC_LEVEL: PUBLIC_ANALYSIS</div>
         </footer>
     </div>
-    <script src="script.js"></script>
+    
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
