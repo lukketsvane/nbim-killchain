@@ -1,0 +1,31 @@
+contract_id,fiscal_year,date_announced,recipient_country,manufacturer_id,manufacturer_name,system_description,contract_value_usd_millions,delivery_period,contract_status
+FMS001,2020,2020-05-12,Israel,MFR002,Boeing,Joint Direct Attack Munitions (JDAM),735,2020-2023,Delivered
+FMS002,2021,2021-08-04,Israel,MFR002,Boeing,Boeing-made JDAM kits and Small Diameter Bombs,735,2021-2024,Delivered
+FMS003,2021,2021-09-13,Israel,MFR001,Lockheed Martin,Precision-guided munitions,735,2021-2024,Partial delivery
+FMS004,2022,2022-03-29,Israel,MFR002,Boeing,AH-64 Apache attack helicopter parts and services,500,2022-2025,In progress
+FMS005,2022,2022-11-18,Israel,MFR001,Lockheed Martin,F-35 sustainment and parts,2800,2022-2027,In progress
+FMS006,2023,2023-01-15,Israel,MFR003,Raytheon,AIM-120 AMRAAM missiles,1020,2023-2026,In progress
+FMS007,2023,2023-10-08,Israel,MFR002,Boeing,"JDAM guidance kits (emergency sale, 2 days after Oct 7)",320,2023-2024,Emergency delivery
+FMS008,2023,2023-10-20,Israel,MFR007,Rafael,Iron Dome interceptors (funded by US),420,2023-2025,Accelerated delivery
+FMS009,2023,2023-11-03,Israel,MFR002,Boeing,Additional precision-guided munitions,260,2023-2024,Delivered
+FMS010,2023,2023-12-09,Israel,MFR001,Lockheed Martin,Tank ammunition and F-16 parts,106,2023-2024,Delivered
+FMS011,2023,2023-12-29,Israel,MFR002,Boeing,Second emergency JDAM sale,147.5,2024,Delivered
+FMS012,2024,2024-01-15,Israel,MFR001,Lockheed Martin,F-35 Joint Strike Fighter parts,2600,2024-2028,In progress
+FMS013,2024,2024-02-13,Israel,MFR002,Boeing,"JDAM, Small Diameter Bombs",320,2024-2025,In progress
+FMS014,2024,2024-03-28,Israel,MFR003,Raytheon,AIM-9X Sidewinder missiles,680,2024-2027,In progress
+FMS015,2024,2024-05-14,Israel,MFR002,Boeing,Precision-guided munitions (GBU-39),827,2024-2026,In progress
+FMS016,2024,2024-07-11,Israel,MFR001,Lockheed Martin,F-15 fighter jet parts and munitions,18800,2024-2030,In progress
+FMS017,2024,2024-08-13,Israel,MFR002,Boeing,Additional JDAM kits and support,262,2024-2025,In progress
+FMS018,2024,2024-09-19,Israel,MFR003,Raytheon,Advanced radar systems and missiles,8700,2024-2029,In progress
+FMS019,2020,2020-02-10,Israel,MFR004,Northrop Grumman,Electronic warfare systems,405,2020-2024,Delivered
+FMS020,2021,2021-04-22,Israel,MFR008,L3Harris Technologies,Communications equipment upgrade,285,2021-2024,Delivered
+FMS021,2022,2022-07-15,Israel,MFR001,Lockheed Martin,F-16 upgrade packages,680,2022-2026,In progress
+FMS022,2023,2023-03-08,Israel,MFR003,Raytheon,Patriot missile system parts,485,2023-2026,In progress
+FMS023,2023,2023-10-15,Israel,MFR001,Lockheed Martin,Emergency ammunition sale (155mm artillery),95,2023-2024,Delivered
+FMS024,2023,2023-11-20,Israel,MFR009,General Dynamics,Tank ammunition and ordnance,175,2023-2024,Delivered
+FMS025,2024,2024-04-05,Israel,MFR002,Boeing,Apache helicopter weapon systems,425,2024-2027,In progress
+FMS026,2024,2024-06-20,Israel,MFR004,Northrop Grumman,Advanced targeting systems,920,2024-2028,In progress
+FMS027,2024,2024-10-01,Israel,MFR001,Lockheed Martin,F-35I Adir sustainment,3200,2024-2029,In progress
+FMS028,2019,2019-09-18,Israel,MFR001,Lockheed Martin,"F-35I Adir aircraft (50 aircraft, largest sale)",10000,2019-2028,Partial delivery
+FMS029,2020,2020-12-10,Israel,MFR002,Boeing,KC-46 aerial refueling tanker,2400,2020-2028,In progress
+FMS030,2021,2021-10-28,Israel,MFR007,Rafael,SPICE precision-guided bombs,425,2021-2024,Delivered

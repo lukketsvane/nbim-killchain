@@ -1,0 +1,107 @@
+date,shareholder_id,shareholder_name,manufacturer_id,manufacturer_name,ownership_percentage,market_value_usd_millions
+2020-12-31,SH002,BlackRock,MFR001,Lockheed Martin,7.8,25450
+2021-06-30,SH002,BlackRock,MFR001,Lockheed Martin,7.9,27180
+2021-12-31,SH002,BlackRock,MFR001,Lockheed Martin,8.0,28320
+2022-06-30,SH002,BlackRock,MFR001,Lockheed Martin,8.0,26890
+2022-12-31,SH002,BlackRock,MFR001,Lockheed Martin,8.1,28650
+2023-06-30,SH002,BlackRock,MFR001,Lockheed Martin,8.1,29420
+2023-12-31,SH002,BlackRock,MFR001,Lockheed Martin,8.1,31180
+2024-06-30,SH002,BlackRock,MFR001,Lockheed Martin,8.1,30250
+2020-12-31,SH001,Vanguard Group,MFR001,Lockheed Martin,7.3,23810
+2021-06-30,SH001,Vanguard Group,MFR001,Lockheed Martin,7.4,25460
+2021-12-31,SH001,Vanguard Group,MFR001,Lockheed Martin,7.5,26540
+2022-06-30,SH001,Vanguard Group,MFR001,Lockheed Martin,7.5,25180
+2022-12-31,SH001,Vanguard Group,MFR001,Lockheed Martin,7.6,26890
+2023-06-30,SH001,Vanguard Group,MFR001,Lockheed Martin,7.6,27620
+2023-12-31,SH001,Vanguard Group,MFR001,Lockheed Martin,7.6,29260
+2024-06-30,SH001,Vanguard Group,MFR001,Lockheed Martin,7.6,28215
+2020-12-31,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.08,3520
+2021-06-30,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.10,3785
+2021-12-31,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.12,3960
+2022-06-30,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.13,3795
+2022-12-31,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.14,4030
+2023-06-30,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.14,4140
+2023-10-07,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.14,4280
+2023-12-31,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.14,4390
+2024-06-30,SH004,Norges Bank (NBIM),MFR001,Lockheed Martin,1.14,4210
+2020-12-31,SH002,BlackRock,MFR002,Boeing,10.8,16420
+2021-06-30,SH002,BlackRock,MFR002,Boeing,11.2,19850
+2021-12-31,SH002,BlackRock,MFR002,Boeing,11.4,18760
+2022-06-30,SH002,BlackRock,MFR002,Boeing,11.5,15320
+2022-12-31,SH002,BlackRock,MFR002,Boeing,11.5,14280
+2023-06-30,SH002,BlackRock,MFR002,Boeing,11.6,16540
+2023-10-07,SH002,BlackRock,MFR002,Boeing,11.6,13850
+2023-12-31,SH002,BlackRock,MFR002,Boeing,11.6,14920
+2024-06-30,SH002,BlackRock,MFR002,Boeing,11.6,12630
+2020-12-31,SH001,Vanguard Group,MFR002,Boeing,10.1,15350
+2021-06-30,SH001,Vanguard Group,MFR002,Boeing,10.5,18620
+2021-12-31,SH001,Vanguard Group,MFR002,Boeing,10.7,17590
+2022-06-30,SH001,Vanguard Group,MFR002,Boeing,10.8,14380
+2022-12-31,SH001,Vanguard Group,MFR002,Boeing,10.8,13410
+2023-06-30,SH001,Vanguard Group,MFR002,Boeing,10.9,15550
+2023-10-07,SH001,Vanguard Group,MFR002,Boeing,10.9,13010
+2023-12-31,SH001,Vanguard Group,MFR002,Boeing,10.9,14020
+2024-06-30,SH001,Vanguard Group,MFR002,Boeing,10.9,11815
+2020-12-31,SH004,Norges Bank (NBIM),MFR002,Boeing,1.52,2310
+2021-06-30,SH004,Norges Bank (NBIM),MFR002,Boeing,1.56,2765
+2021-12-31,SH004,Norges Bank (NBIM),MFR002,Boeing,1.58,2600
+2022-06-30,SH004,Norges Bank (NBIM),MFR002,Boeing,1.59,2120
+2022-12-31,SH004,Norges Bank (NBIM),MFR002,Boeing,1.59,1975
+2023-06-30,SH004,Norges Bank (NBIM),MFR002,Boeing,1.60,2280
+2023-10-07,SH004,Norges Bank (NBIM),MFR002,Boeing,1.60,1910
+2023-12-31,SH004,Norges Bank (NBIM),MFR002,Boeing,1.60,2060
+2024-06-30,SH004,Norges Bank (NBIM),MFR002,Boeing,1.60,1733
+2020-12-31,SH002,BlackRock,MFR003,Raytheon Technologies,9.5,13580
+2021-06-30,SH002,BlackRock,MFR003,Raytheon Technologies,9.6,14720
+2021-12-31,SH002,BlackRock,MFR003,Raytheon Technologies,9.7,15340
+2022-06-30,SH002,BlackRock,MFR003,Raytheon Technologies,9.7,14250
+2022-12-31,SH002,BlackRock,MFR003,Raytheon Technologies,9.8,15120
+2023-06-30,SH002,BlackRock,MFR003,Raytheon Technologies,9.8,15890
+2023-10-07,SH002,BlackRock,MFR003,Raytheon Technologies,9.8,16240
+2023-12-31,SH002,BlackRock,MFR003,Raytheon Technologies,9.8,17120
+2024-06-30,SH002,BlackRock,MFR003,Raytheon Technologies,9.8,16450
+2020-12-31,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.20,1715
+2021-06-30,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.22,1870
+2021-12-31,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.24,1960
+2022-06-30,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.25,1835
+2022-12-31,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.25,1930
+2023-06-30,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.26,2040
+2023-10-07,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.26,2090
+2023-12-31,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.26,2195
+2024-06-30,SH004,Norges Bank (NBIM),MFR003,Raytheon Technologies,1.26,2120
+2020-12-31,SH002,BlackRock,MFR005,Elbit Systems,6.5,510
+2021-06-30,SH002,BlackRock,MFR005,Elbit Systems,6.6,548
+2021-12-31,SH002,BlackRock,MFR005,Elbit Systems,6.7,592
+2022-06-30,SH002,BlackRock,MFR005,Elbit Systems,6.7,575
+2022-12-31,SH002,BlackRock,MFR005,Elbit Systems,6.7,580
+2023-06-30,SH002,BlackRock,MFR005,Elbit Systems,6.7,598
+2023-10-07,SH002,BlackRock,MFR005,Elbit Systems,6.7,685
+2023-12-31,SH002,BlackRock,MFR005,Elbit Systems,6.7,720
+2024-06-30,SH002,BlackRock,MFR005,Elbit Systems,6.7,615
+2020-12-31,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2021-06-30,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2021-12-31,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2022-06-30,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2022-12-31,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2023-06-30,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2023-10-07,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2023-12-31,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2024-06-30,SH004,Norges Bank (NBIM),MFR005,Elbit Systems,0.0,0
+2020-12-31,SH002,BlackRock,MFR011,Caterpillar,12.8,21840
+2021-06-30,SH002,BlackRock,MFR011,Caterpillar,13.1,24150
+2021-12-31,SH002,BlackRock,MFR011,Caterpillar,13.3,25680
+2022-06-30,SH002,BlackRock,MFR011,Caterpillar,13.4,22340
+2022-12-31,SH002,BlackRock,MFR011,Caterpillar,13.4,23120
+2023-06-30,SH002,BlackRock,MFR011,Caterpillar,13.5,24560
+2023-10-07,SH002,BlackRock,MFR011,Caterpillar,13.5,23980
+2023-12-31,SH002,BlackRock,MFR011,Caterpillar,13.5,26340
+2024-06-30,SH002,BlackRock,MFR011,Caterpillar,13.5,24840
+2020-12-31,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.22,2080
+2021-06-30,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.25,2305
+2021-12-31,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.27,2450
+2022-06-30,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.28,2135
+2022-12-31,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.28,2210
+2023-06-30,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.29,2345
+2023-10-07,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.29,2290
+2023-12-31,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.29,2515
+2024-06-30,SH004,Norges Bank (NBIM),MFR011,Caterpillar,1.29,2372

@@ -1,0 +1,71 @@
+date,manufacturer_id,manufacturer_name,stock_ticker,closing_price_usd,daily_change_pct,volume_millions,notable_event
+2023-10-06,MFR001,Lockheed Martin,LMT,452.30,0.15,1.2,Day before Gaza war
+2023-10-07,MFR001,Lockheed Martin,LMT,453.80,0.33,1.4,Hamas attack on Israel
+2023-10-09,MFR001,Lockheed Martin,LMT,458.20,0.97,1.8,Israel begins airstrikes
+2023-10-16,MFR001,Lockheed Martin,LMT,465.40,1.57,2.1,Gaza operations intensify
+2023-10-31,MFR001,Lockheed Martin,LMT,474.20,1.89,1.9,Ground invasion begins
+2023-11-15,MFR001,Lockheed Martin,LMT,482.60,1.77,1.6,Continued operations
+2023-12-31,MFR001,Lockheed Martin,LMT,498.50,3.30,1.5,End of Q4 2023
+2024-01-31,MFR001,Lockheed Martin,LMT,505.20,1.34,1.4,
+2024-03-31,MFR001,Lockheed Martin,LMT,512.80,1.50,1.3,
+2024-06-30,MFR001,Lockheed Martin,LMT,484.10,-5.60,1.5,Quarterly data
+2023-10-06,MFR002,Boeing,BA,176.50,-0.22,6.8,Day before Gaza war
+2023-10-07,MFR002,Boeing,BA,174.20,-1.30,7.2,Hamas attack
+2023-10-09,MFR002,Boeing,BA,177.80,2.07,8.5,Emergency JDAM sale announced
+2023-10-16,MFR002,Boeing,BA,181.40,2.02,9.1,Additional munitions contracts
+2023-10-31,MFR002,Boeing,BA,186.90,3.03,8.4,
+2023-11-15,MFR002,Boeing,BA,189.50,1.39,7.2,
+2023-12-31,MFR002,Boeing,BA,188.20,-0.69,6.5,End of Q4 2023
+2024-01-31,MFR002,Boeing,BA,192.80,2.44,7.8,
+2024-03-31,MFR002,Boeing,BA,183.40,-4.87,9.2,Boeing 737 Max issues
+2024-06-30,MFR002,Boeing,BA,176.80,-3.60,8.5,Quarterly data
+2023-10-06,MFR003,Raytheon Technologies,RTX,84.20,-0.12,5.5,Day before Gaza war
+2023-10-07,MFR003,Raytheon Technologies,RTX,84.50,0.36,5.8,Hamas attack
+2023-10-09,MFR003,Raytheon Technologies,RTX,85.80,1.54,6.2,Israel defense contracts
+2023-10-16,MFR003,Raytheon Technologies,RTX,87.40,1.86,6.8,Iron Dome interceptors
+2023-10-31,MFR003,Raytheon Technologies,RTX,89.20,2.06,6.5,
+2023-11-15,MFR003,Raytheon Technologies,RTX,91.50,2.58,5.9,
+2023-12-31,MFR003,Raytheon Technologies,RTX,95.80,4.70,5.6,End of Q4 2023
+2024-01-31,MFR003,Raytheon Technologies,RTX,98.20,2.51,5.4,
+2024-03-31,MFR003,Raytheon Technologies,RTX,101.50,3.36,5.2,
+2024-06-30,MFR003,Raytheon Technologies,RTX,103.20,1.67,5.1,Quarterly data
+2023-10-06,MFR004,Northrop Grumman,NOC,445.80,-0.08,1.1,Day before Gaza war
+2023-10-07,MFR004,Northrop Grumman,NOC,447.20,0.31,1.3,Hamas attack
+2023-10-09,MFR004,Northrop Grumman,NOC,452.60,1.21,1.5,
+2023-10-16,MFR004,Northrop Grumman,NOC,458.90,1.39,1.6,
+2023-10-31,MFR004,Northrop Grumman,NOC,467.20,1.81,1.5,
+2023-11-15,MFR004,Northrop Grumman,NOC,475.80,1.84,1.4,
+2023-12-31,MFR004,Northrop Grumman,NOC,489.50,2.88,1.3,End of Q4 2023
+2024-01-31,MFR004,Northrop Grumman,NOC,495.60,1.25,1.2,
+2024-03-31,MFR004,Northrop Grumman,NOC,502.80,1.45,1.2,
+2024-06-30,MFR004,Northrop Grumman,NOC,478.20,-4.89,1.4,Quarterly data
+2023-10-06,MFR005,Elbit Systems,ESLT,195.40,0.18,0.45,Day before Gaza war
+2023-10-07,MFR005,Elbit Systems,ESLT,198.60,1.64,0.82,Hamas attack - Israeli company
+2023-10-09,MFR005,Elbit Systems,ESLT,206.80,4.13,1.25,Major spike in trading
+2023-10-16,MFR005,Elbit Systems,ESLT,218.50,5.66,1.42,Continued demand
+2023-10-31,MFR005,Elbit Systems,ESLT,232.40,6.36,1.38,Record trading activity
+2023-11-15,MFR005,Elbit Systems,ESLT,241.80,4.05,1.12,New contracts announced
+2023-12-31,MFR005,Elbit Systems,ESLT,256.30,5.99,0.98,End of Q4 2023 - up 31% from Oct 6
+2024-01-31,MFR005,Elbit Systems,ESLT,248.20,-3.16,0.88,
+2024-03-31,MFR005,Elbit Systems,ESLT,242.50,-2.30,0.92,
+2024-06-30,MFR005,Elbit Systems,ESLT,238.90,-1.48,0.85,Quarterly data
+2023-10-06,MFR011,Caterpillar,CAT,265.80,-0.11,3.2,Day before Gaza war
+2023-10-07,MFR011,Caterpillar,CAT,264.50,-0.49,3.4,Hamas attack
+2023-10-09,MFR011,Caterpillar,CAT,265.20,0.26,3.5,D9 bulldozers in news
+2023-10-16,MFR011,Caterpillar,CAT,268.40,1.21,3.8,Ground operations begin
+2023-10-31,MFR011,Caterpillar,CAT,275.30,2.57,4.1,Infrastructure demolition footage
+2023-11-15,MFR011,Caterpillar,CAT,282.60,2.65,3.9,
+2023-12-31,MFR011,Caterpillar,CAT,298.50,5.63,3.6,End of Q4 2023
+2024-01-31,MFR011,Caterpillar,CAT,305.20,2.24,3.4,
+2024-03-31,MFR011,Caterpillar,CAT,312.80,2.49,3.3,
+2024-06-30,MFR011,Caterpillar,CAT,348.20,11.31,3.5,Quarterly data - strong performance
+2023-10-06,MFR008,L3Harris Technologies,LHX,182.40,-0.05,2.1,Day before Gaza war
+2023-10-07,MFR008,L3Harris Technologies,LHX,183.20,0.44,2.3,Hamas attack
+2023-10-09,MFR008,L3Harris Technologies,LHX,185.60,1.31,2.5,Communications contracts
+2023-10-16,MFR008,L3Harris Technologies,LHX,189.20,1.94,2.7,
+2023-10-31,MFR008,L3Harris Technologies,LHX,193.80,2.43,2.6,
+2023-11-15,MFR008,L3Harris Technologies,LHX,198.50,2.43,2.4,
+2023-12-31,MFR008,L3Harris Technologies,LHX,205.80,3.68,2.2,End of Q4 2023
+2024-01-31,MFR008,L3Harris Technologies,LHX,210.40,2.23,2.1,
+2024-03-31,MFR008,L3Harris Technologies,LHX,215.60,2.47,2.0,
+2024-06-30,MFR008,L3Harris Technologies,LHX,219.80,1.95,2.1,Quarterly data

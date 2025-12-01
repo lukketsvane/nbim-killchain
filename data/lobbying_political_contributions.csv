@@ -1,0 +1,46 @@
+year,manufacturer_id,manufacturer_name,total_lobbying_usd_millions,political_contributions_usd_thousands,top_recipients,policy_focus_areas,congress_members_receiving_contributions
+2020,MFR001,Lockheed Martin,13.1,3420,"Biden campaign; McConnell; Inhofe","Defense spending; F-35 program; Export licenses",287
+2021,MFR001,Lockheed Martin,12.8,2850,"Inhofe; Wicker; Reed","Defense appropriations; Israel military aid",265
+2022,MFR001,Lockheed Martin,14.2,4120,"McConnell; Schumer; Reed","Ukraine aid; Israel security assistance",298
+2023,MFR001,Lockheed Martin,15.6,4580,"Johnson; McConnell; Reed","Israel emergency aid; Defense budget",312
+2024,MFR001,Lockheed Martin,16.8,5240,"Trump campaign; Harris campaign; Senate Armed Services Committee","Israel supplemental funding; Long-term contracts",328
+2020,MFR002,Boeing,15.4,4280,"Biden campaign; Cantwell; Larsen","Defense contracts; Trade policy; Export-Import Bank",321
+2021,MFR002,Boeing,14.1,3650,"Cantwell; Murray; Larsen","737 Max certification; Defense spending",298
+2022,MFR002,Boeing,16.2,4890,"Cantwell; Murray; Smith (Adam)","Ukraine aid packages; Israel military assistance",334
+2023,MFR002,Boeing,17.8,5420,"Johnson; Cantwell; Smith (Adam)","Emergency Israel weapons sales; Tanker program",356
+2024,MFR002,Boeing,18.5,6120,"Harris campaign; Cantwell; Senate Appropriations","Continued Israel support; Defense modernization",378
+2020,MFR003,Raytheon Technologies,11.2,3180,"Biden campaign; Reed; Thornberry","Missile defense; Export licenses",245
+2021,MFR003,Raytheon Technologies,10.8,2940,"Reed; Wicker; Rogers (Mike)","Iron Dome funding; Patriot systems",232
+2022,MFR003,Raytheon Technologies,12.4,3850,"Reed; Wicker; Rogers (Mike)","Ukraine Patriot systems; Israel missile defense",267
+2023,MFR003,Raytheon Technologies,13.9,4320,"Johnson; Reed; Rogers (Mike)","Israel emergency interceptors; THAAD systems",289
+2024,MFR003,Raytheon Technologies,15.2,5080,"Trump campaign; Harris campaign; HASC members","Long-term Israel contracts; Hypersonics",312
+2020,MFR004,Northrop Grumman,11.8,2950,"Biden campaign; Reed; Thornberry","B-21 bomber; Cyber; Space",234
+2021,MFR004,Northrop Grumman,11.3,2680,"Reed; Wicker; Turner","GBSD program; Israel radar systems",221
+2022,MFR004,Northrop Grumman,12.7,3420,"Reed; Wicker; Turner","Strategic modernization; Israel EW systems",245
+2023,MFR004,Northrop Grumman,13.8,3890,"Johnson; Reed; Turner","Space; Israel advanced sensors",267
+2024,MFR004,Northrop Grumman,14.5,4350,"Harris campaign; HASC/SASC members","Next-gen systems; Israel tech cooperation",282
+2020,MFR005,Elbit Systems,2.4,580,"Engel; Deutch; Rosen","US-Israel cooperation; Trade",45
+2021,MFR005,Elbit Systems,2.6,620,"Deutch; Schneider; Sherman","Iron Dome co-production; F-35 components",48
+2022,MFR005,Elbit Systems,2.9,740,"Schneider; Sherman; Lieu","Israel security assistance; Joint development",52
+2023,MFR005,Elbit Systems,3.8,1240,"Johnson; Schumer; Israel Caucus","Emergency Israel aid; Expedited contracts",68
+2024,MFR005,Elbit Systems,4.2,1480,"Israel Caucus members; Armed Services Committees","Sustained Israel support; Co-production expansion",74
+2020,MFR008,L3Harris Technologies,9.2,2340,"Biden campaign; Thornberry; Smith (Adam)","Communications; ISR; Electronic warfare",198
+2021,MFR008,L3Harris Technologies,8.9,2120,"Smith (Adam); Rogers (Mike); Reed","Tactical communications; Foreign military sales",187
+2022,MFR008,L3Harris Technologies,10.1,2680,"Smith (Adam); Rogers (Mike); Turner","Ukraine comms; Israel ISR systems",209
+2023,MFR008,L3Harris Technologies,11.4,3120,"Johnson; Rogers (Mike); Turner","Israel battlefield networks; Secure communications",228
+2024,MFR008,L3Harris Technologies,12.1,3640,"HASC/SASC members; Intel Committee","Israel advanced systems; AI integration",245
+2020,MFR009,General Dynamics,10.6,2780,"Biden campaign; Reed; Courtney","Columbia-class submarines; Combat systems",221
+2021,MFR009,General Dynamics,10.2,2540,"Reed; Wicker; Courtney","Shipbuilding; Munitions",209
+2022,MFR009,General Dynamics,11.4,3050,"Reed; Wicker; Courtney","Munitions production; Israel ammunition",234
+2023,MFR009,General Dynamics,12.3,3420,"Johnson; Reed; Courtney","Emergency Israel ammunition; Artillery",256
+2024,MFR009,General Dynamics,13.1,3890,"Armed Services Committees; Appropriators","Sustained ammunition production; Israel resupply",278
+2020,MFR011,Caterpillar,5.8,1240,"Trump campaign; McConnell; Shimkus","Trade policy; Infrastructure; Tax",112
+2021,MFR011,Caterpillar,5.4,980,"LaHood; Shimkus; Davis (Rodney)","Infrastructure bill; Manufacturing",98
+2022,MFR011,Caterpillar,6.1,1350,"McCarthy; LaHood; Infrastructure supporters","Implementation; Trade",118
+2023,MFR011,Caterpillar,6.8,1680,"Johnson; LaHood; Ways & Means","Israel operations visibility; Equipment sales",134
+2024,MFR011,Caterpillar,7.2,1920,"Trump campaign; House GOP leadership","Trade; Tax policy; Equipment exports",148
+2020,MFR010,BAE Systems,4.2,890,"Biden campaign; Defense committees","US-UK cooperation; Combat vehicles",78
+2021,MFR010,BAE Systems,4.0,820,"Armed Services members; Trade committees","Munitions production; Artillery",72
+2022,MFR010,BAE Systems,4.6,1120,"Armed Services; Appropriations","Ukraine artillery; Industrial base",85
+2023,MFR010,BAE Systems,5.1,1340,"Johnson; Defense appropriators","Israel ammunition; 155mm production",94
+2024,MFR010,BAE Systems,5.5,1540,"Defense committees; Trade","Sustained munitions; US production expansion",102

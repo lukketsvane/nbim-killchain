@@ -24,6 +24,13 @@ def load_data():
     data['components'] = pd.read_csv(DATA_DIR / 'system_components.csv')
     data['infrastructure'] = pd.read_csv(DATA_DIR / 'infrastructure_ownership_analysis.csv')
     data['operations'] = pd.read_csv(DATA_DIR / 'gaza_operations_data.csv')
+
+    # Load new datasets
+    data['ownership_timeseries'] = pd.read_csv(DATA_DIR / 'ownership_timeseries.csv')
+    data['fms_contracts'] = pd.read_csv(DATA_DIR / 'fms_contracts.csv')
+    data['stock_performance'] = pd.read_csv(DATA_DIR / 'stock_performance_gaza_war.csv')
+    data['lobbying'] = pd.read_csv(DATA_DIR / 'lobbying_political_contributions.csv')
+
     return data
 
 def calculate_total_ownership_by_system(data):
@@ -50,7 +57,7 @@ def calculate_total_ownership_by_system(data):
 
     # Aggreger per system og investor
     system_ownership = component_ownership.groupby(
-        ['system_id', 'system_name_comp', 'shareholder_name']
+        ['system_id', 'system_name', 'shareholder_name']
     ).agg({
         'component_ownership_value': 'sum',
         'estimated_value_per_unit_usd_millions': 'sum'
@@ -63,7 +70,6 @@ def calculate_total_ownership_by_system(data):
     )
 
     system_ownership = system_ownership.rename(columns={
-        'system_name_comp': 'system_name',
         'estimated_value_per_unit_usd_millions': 'total_system_value_usd_millions'
     })
 
@@ -179,9 +185,27 @@ def export_analysis_results(data, stats):
     """
     Eksporter analyseresultat til JSON og CSV
     """
+    # Convert numpy types to Python types for JSON serialization
+    def convert_types(obj):
+        if isinstance(obj, dict):
+            return {k: convert_types(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [convert_types(item) for item in obj]
+        elif isinstance(obj, (np.integer, np.int64)):
+            return int(obj)
+        elif isinstance(obj, (np.floating, np.float64)):
+            return float(obj)
+        elif isinstance(obj, pd.Timestamp):
+            return obj.isoformat()
+        elif pd.isna(obj):
+            return None
+        return obj
+
+    stats_converted = convert_types(stats)
+
     # Export summary as JSON
     with open(OUTPUT_DIR / 'summary_statistics.json', 'w', encoding='utf-8') as f:
-        json.dump(stats, f, indent=2, ensure_ascii=False)
+        json.dump(stats_converted, f, indent=2, ensure_ascii=False)
 
     # Export system ownership
     system_ownership = calculate_total_ownership_by_system(data)
@@ -194,7 +218,7 @@ def export_analysis_results(data, stats):
     # Export infrastructure analysis (copy from data)
     data['infrastructure'].to_csv(OUTPUT_DIR / 'infrastructure_ownership_summary.csv', index=False)
 
-    print(f"✓ Eksporterte analyseresultat til {OUTPUT_DIR}")
+    print(f"[OK] Eksporterte analyseresultat til {OUTPUT_DIR}")
 
 def print_summary(stats):
     """
@@ -239,6 +263,108 @@ def print_summary(stats):
 
     print("="*80 + "\n")
 
+def analyze_fms_contracts(data):
+    """
+    Analyser US Foreign Military Sales contracts til Israel
+    """
+    fms = data['fms_contracts'].copy()
+    fms['contract_value_usd_millions'] = pd.to_numeric(fms['contract_value_usd_millions'])
+
+    # Total per manufacturer
+    by_manufacturer = fms.groupby('manufacturer_name').agg({
+        'contract_value_usd_millions': 'sum',
+        'contract_id': 'count'
+    }).reset_index()
+    by_manufacturer.columns = ['manufacturer_name', 'total_value_usd_millions', 'number_of_contracts']
+    by_manufacturer = by_manufacturer.sort_values('total_value_usd_millions', ascending=False)
+
+    # Post Oct 7, 2023 emergency sales
+    fms['date_announced'] = pd.to_datetime(fms['date_announced'])
+    post_oct7 = fms[fms['date_announced'] >= '2023-10-07']
+    post_oct7_value = post_oct7['contract_value_usd_millions'].sum()
+
+    return {
+        'by_manufacturer': by_manufacturer.to_dict('records'),
+        'total_fms_value': fms['contract_value_usd_millions'].sum(),
+        'post_oct7_value': post_oct7_value,
+        'post_oct7_contracts': len(post_oct7)
+    }
+
+def analyze_stock_performance(data):
+    """
+    Analyser aksjekursutvikling under Gaza-krigen
+    """
+    stock = data['stock_performance'].copy()
+    stock['date'] = pd.to_datetime(stock['date'])
+
+    # Calculate performance from Oct 6 to Dec 31, 2023
+    oct6 = stock[stock['date'] == '2023-10-06'].set_index('manufacturer_name')['closing_price_usd']
+    dec31 = stock[stock['date'] == '2023-12-31'].set_index('manufacturer_name')['closing_price_usd']
+
+    performance = pd.DataFrame({
+        'oct6_price': oct6,
+        'dec31_price': dec31
+    })
+    performance['pct_change'] = ((performance['dec31_price'] - performance['oct6_price']) /
+                                  performance['oct6_price'] * 100)
+    performance = performance.sort_values('pct_change', ascending=False)
+
+    return performance.to_dict('index')
+
+def analyze_lobbying(data):
+    """
+    Analyser lobbyisme og politiske bidrag
+    """
+    lobbying = data['lobbying'].copy()
+
+    # Total 2020-2024
+    by_manufacturer = lobbying.groupby('manufacturer_name').agg({
+        'total_lobbying_usd_millions': 'sum',
+        'political_contributions_usd_thousands': 'sum'
+    }).reset_index()
+    by_manufacturer = by_manufacturer.sort_values('total_lobbying_usd_millions', ascending=False)
+
+    # 2023-2024 (Gaza war period)
+    war_period = lobbying[lobbying['year'].isin([2023, 2024])]
+    war_spending = war_period.groupby('manufacturer_name').agg({
+        'total_lobbying_usd_millions': 'sum',
+        'political_contributions_usd_thousands': 'sum'
+    }).reset_index()
+
+    return {
+        'total_2020_2024': by_manufacturer.to_dict('records'),
+        'war_period_2023_2024': war_spending.to_dict('records'),
+        'total_lobbying': by_manufacturer['total_lobbying_usd_millions'].sum(),
+        'total_contributions': by_manufacturer['political_contributions_usd_thousands'].sum()
+    }
+
+def analyze_nbim_timeseries(data):
+    """
+    Analyser NBIM sitt eigarskap over tid
+    """
+    timeseries = data['ownership_timeseries'].copy()
+    timeseries['date'] = pd.to_datetime(timeseries['date'])
+
+    nbim_ts = timeseries[timeseries['shareholder_name'] == 'Norges Bank (NBIM)']
+
+    # Total value over time
+    by_date = nbim_ts.groupby('date').agg({
+        'market_value_usd_millions': 'sum',
+        'ownership_percentage': 'mean'
+    }).reset_index()
+
+    # Change on Oct 7, 2023
+    oct7_row = nbim_ts[nbim_ts['date'] == '2023-10-07']
+    if not oct7_row.empty:
+        oct7_total = oct7_row['market_value_usd_millions'].sum()
+    else:
+        oct7_total = None
+
+    return {
+        'timeseries': by_date.to_dict('records'),
+        'oct7_2023_value': oct7_total
+    }
+
 def main():
     """Hovudfunksjon"""
     print("Lastar data...")
@@ -247,12 +373,33 @@ def main():
     print("Bereknar eigarskapsanalyse...")
     stats = generate_summary_statistics(data)
 
+    print("Analyserer FMS-kontraktar...")
+    fms_analysis = analyze_fms_contracts(data)
+    stats['fms_contracts'] = fms_analysis
+
+    print("Analyserer aksjekursutvikling...")
+    stock_analysis = analyze_stock_performance(data)
+    stats['stock_performance_oct_dec_2023'] = stock_analysis
+
+    print("Analyserer lobbyisme...")
+    lobbying_analysis = analyze_lobbying(data)
+    stats['lobbying'] = lobbying_analysis
+
+    print("Analyserer NBIM tidsserie...")
+    nbim_ts = analyze_nbim_timeseries(data)
+    stats['nbim_timeseries'] = nbim_ts
+
     print("Eksporterer resultat...")
     export_analysis_results(data, stats)
 
     print_summary(stats)
 
-    print(f"\n✓ Analyse fullført. Sjå {OUTPUT_DIR} for detaljerte resultat.")
+    print(f"\n[OK] Analyse fullfort. Sja {OUTPUT_DIR} for detaljerte resultat.")
+    print(f"\nNye analysar inkluderer:")
+    print(f"  - FMS-kontraktar: ${fms_analysis['total_fms_value']:,.0f}M totalt")
+    print(f"  - Post-Oct 7 FMS: ${fms_analysis['post_oct7_value']:,.0f}M ({fms_analysis['post_oct7_contracts']} kontraktar)")
+    print(f"  - Total lobbyisme 2020-2024: ${lobbying_analysis['total_lobbying']:.1f}M")
+    print(f"  - Politiske bidrag: ${lobbying_analysis['total_contributions']:,.0f}K")
 
 if __name__ == '__main__':
     main()

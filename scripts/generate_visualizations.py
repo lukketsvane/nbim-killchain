@@ -30,6 +30,10 @@ def load_data():
     data['ownership'] = pd.read_csv(DATA_DIR / 'ownership_stakes.csv')
     data['infrastructure'] = pd.read_csv(DATA_DIR / 'infrastructure_ownership_analysis.csv')
     data['operations'] = pd.read_csv(DATA_DIR / 'gaza_operations_data.csv')
+    data['ownership_timeseries'] = pd.read_csv(DATA_DIR / 'ownership_timeseries.csv')
+    data['fms_contracts'] = pd.read_csv(DATA_DIR / 'fms_contracts.csv')
+    data['stock_performance'] = pd.read_csv(DATA_DIR / 'stock_performance_gaza_war.csv')
+    data['lobbying'] = pd.read_csv(DATA_DIR / 'lobbying_political_contributions.csv')
     return data
 
 def plot_top_investors_bar(data):
@@ -317,6 +321,198 @@ def generate_interactive_table(data):
 
     print("✓ Genererte: interactive_ownership_table")
 
+def plot_stock_performance_war(data):
+    """
+    Aksjekursutvikling for produsenter under Gaza-krigen
+    """
+    stock = data['stock_performance'].copy()
+    stock['date'] = pd.to_datetime(stock['date'])
+
+    # Focus on key manufacturers
+    key_manufacturers = ['Lockheed Martin', 'Boeing', 'Raytheon Technologies', 'Elbit Systems', 'Northrop Grumman']
+    stock_filtered = stock[stock['manufacturer_name'].isin(key_manufacturers)]
+
+    fig = px.line(
+        stock_filtered,
+        x='date',
+        y='closing_price_usd',
+        color='manufacturer_name',
+        title='Aksjekursutvikling under Gaza-krigen (okt 2023 - jun 2024)',
+        labels={'date': 'Dato', 'closing_price_usd': 'Aksjekurs (USD)', 'manufacturer_name': 'Produsent'}
+    )
+
+    # Add vertical line for Oct 7
+    fig.add_vline(x='2023-10-07', line_dash="dash", line_color="red",
+                  annotation_text="7. oktober 2023", annotation_position="top left")
+
+    fig.update_layout(height=600, hovermode='x unified')
+    fig.write_html(VIZ_DIR / 'stock_performance_war.html')
+
+    print("✓ Genererte: stock_performance_war")
+
+def plot_fms_contracts_timeline(data):
+    """
+    FMS-kontraktar til Israel over tid
+    """
+    fms = data['fms_contracts'].copy()
+    fms['date_announced'] = pd.to_datetime(fms['date_announced'])
+    fms['fiscal_year'] = fms['fiscal_year'].astype(int)
+
+    # Aggregate by fiscal year
+    by_year = fms.groupby('fiscal_year').agg({
+        'contract_value_usd_millions': 'sum',
+        'contract_id': 'count'
+    }).reset_index()
+
+    fig = make_subplots(
+        rows=2, cols=1,
+        subplot_titles=('Total kontraktverdi per år', 'Antal kontraktar per år'),
+        vertical_spacing=0.15
+    )
+
+    fig.add_trace(
+        go.Bar(x=by_year['fiscal_year'], y=by_year['contract_value_usd_millions'],
+               name='Kontraktverdi (millionar USD)', marker_color='#E63946'),
+        row=1, col=1
+    )
+
+    fig.add_trace(
+        go.Bar(x=by_year['fiscal_year'], y=by_year['contract_id'],
+               name='Antal kontraktar', marker_color='#457B9D'),
+        row=2, col=1
+    )
+
+    fig.update_xaxes(title_text="Fiscal Year", row=2, col=1)
+    fig.update_yaxes(title_text="USD Millionar", row=1, col=1)
+    fig.update_yaxes(title_text="Antal kontraktar", row=2, col=1)
+
+    fig.update_layout(
+        title_text='US Foreign Military Sales til Israel (2019-2024)',
+        height=700,
+        showlegend=False
+    )
+
+    fig.write_html(VIZ_DIR / 'fms_contracts_timeline.html')
+
+    print("✓ Genererte: fms_contracts_timeline")
+
+def plot_lobbying_trends(data):
+    """
+    Lobbyisme-trend 2020-2024
+    """
+    lobbying = data['lobbying'].copy()
+
+    # Top 5 manufacturers by total lobbying
+    top5_mfr = lobbying.groupby('manufacturer_name')['total_lobbying_usd_millions'].sum().nlargest(5).index
+    lobbying_top5 = lobbying[lobbying['manufacturer_name'].isin(top5_mfr)]
+
+    fig = go.Figure()
+
+    for mfr in top5_mfr:
+        mfr_data = lobbying_top5[lobbying_top5['manufacturer_name'] == mfr]
+        fig.add_trace(go.Scatter(
+            x=mfr_data['year'],
+            y=mfr_data['total_lobbying_usd_millions'],
+            mode='lines+markers',
+            name=mfr,
+            line=dict(width=3)
+        ))
+
+    # Add shaded region for Gaza war
+    fig.add_vrect(x0=2023, x1=2024, fillcolor="red", opacity=0.1,
+                  annotation_text="Gaza-krigen", annotation_position="top left")
+
+    fig.update_layout(
+        title='Lobbyisme-utgifter for våpenprodusenter (2020-2024)',
+        xaxis_title='År',
+        yaxis_title='Lobbyisme (millionar USD)',
+        height=600,
+        hovermode='x unified'
+    )
+
+    fig.write_html(VIZ_DIR / 'lobbying_trends.html')
+
+    print("✓ Genererte: lobbying_trends")
+
+def plot_nbim_timeseries(data):
+    """
+    NBIM eigarskap over tid
+    """
+    timeseries = data['ownership_timeseries'].copy()
+    timeseries['date'] = pd.to_datetime(timeseries['date'])
+
+    nbim_ts = timeseries[timeseries['shareholder_name'] == 'Norges Bank (NBIM)']
+
+    # Total value over time
+    by_date = nbim_ts.groupby('date')['market_value_usd_millions'].sum().reset_index()
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=by_date['date'],
+        y=by_date['market_value_usd_millions'],
+        mode='lines+markers',
+        name='NBIM total investering',
+        line=dict(color='#E63946', width=3),
+        fill='tozeroy'
+    ))
+
+    # Add vertical line for Oct 7
+    fig.add_vline(x='2023-10-07', line_dash="dash", line_color="black",
+                  annotation_text="7. oktober 2023")
+
+    fig.update_layout(
+        title='NBIM sitt eigarskap i kill chain-selskap over tid',
+        xaxis_title='Dato',
+        yaxis_title='Marknadsverdi (millionar USD)',
+        height=600
+    )
+
+    fig.write_html(VIZ_DIR / 'nbim_timeseries.html')
+
+    print("✓ Genererte: nbim_timeseries")
+
+def plot_stock_performance_comparison(data):
+    """
+    Samanlikning av aksjekurs før/etter 7. oktober
+    """
+    stock = data['stock_performance'].copy()
+    stock['date'] = pd.to_datetime(stock['date'])
+
+    # Get Oct 6 and Dec 31 prices
+    oct6 = stock[stock['date'] == '2023-10-06'][['manufacturer_name', 'closing_price_usd']]
+    dec31 = stock[stock['date'] == '2023-12-31'][['manufacturer_name', 'closing_price_usd']]
+
+    comparison = oct6.merge(dec31, on='manufacturer_name', suffixes=('_oct6', '_dec31'))
+    comparison['pct_change'] = ((comparison['closing_price_usd_dec31'] - comparison['closing_price_usd_oct6']) /
+                                 comparison['closing_price_usd_oct6'] * 100)
+    comparison = comparison.sort_values('pct_change', ascending=True)
+
+    fig = go.Figure()
+
+    colors = ['#2A9D8F' if x >= 0 else '#E76F51' for x in comparison['pct_change']]
+
+    fig.add_trace(go.Bar(
+        y=comparison['manufacturer_name'],
+        x=comparison['pct_change'],
+        orientation='h',
+        marker_color=colors,
+        text=comparison['pct_change'].round(2),
+        texttemplate='%{text}%',
+        textposition='outside'
+    ))
+
+    fig.update_layout(
+        title='Aksjekursendring 6. oktober - 31. desember 2023 (%)',
+        xaxis_title='Endring (%)',
+        yaxis_title='Produsent',
+        height=600
+    )
+
+    fig.write_html(VIZ_DIR / 'stock_performance_comparison.html')
+
+    print("✓ Genererte: stock_performance_comparison")
+
 def main():
     """Hovudfunksjon"""
     print("Lastar data...")
@@ -324,6 +520,7 @@ def main():
 
     print("\nGenererer visualiseringar...\n")
 
+    # Original visualizations
     plot_top_investors_bar(data)
     plot_ownership_heatmap(data)
     plot_nbim_comparison(data)
@@ -332,6 +529,13 @@ def main():
     plot_munition_types_breakdown(data)
     plot_system_types_distribution(data)
     generate_interactive_table(data)
+
+    # New visualizations
+    plot_stock_performance_war(data)
+    plot_fms_contracts_timeline(data)
+    plot_lobbying_trends(data)
+    plot_nbim_timeseries(data)
+    plot_stock_performance_comparison(data)
 
     print(f"\n✓ Alle visualiseringar genererte i {VIZ_DIR}")
     print("\nFiler:")

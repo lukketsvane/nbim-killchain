@@ -1,21 +1,21 @@
 manufacturer_id,manufacturer_name,country,stock_ticker,stock_exchange,sector,primary_products
-MFR001,Lockheed Martin,USA,LMT,NYSE,Aerospace & Defense,F-35, F-16, Missiles
-MFR002,Boeing,USA,BA,NYSE,Aerospace & Defense,F-15, Apache, JDAM, Satellites
-MFR003,Raytheon Technologies,USA,RTX,NYSE,Aerospace & Defense,Missiles, Radar, Air Defense
-MFR004,Northrop Grumman,USA,NOC,NYSE,Aerospace & Defense,Radar, UAVs, Electronics
-MFR005,Elbit Systems,Israel,ESLT,NASDAQ,Aerospace & Defense,UAVs, Land Systems, Avionics
-MFR006,Israel Aerospace Industries (IAI),Israel,N/A,Private (State-owned),Aerospace & Defense,UAVs, Missiles, Radar
-MFR007,Rafael Advanced Defense,Israel,N/A,Private (State-owned),Aerospace & Defense,Missiles, Bombs, Air Defense
-MFR008,L3Harris Technologies,USA,LHX,NYSE,Defense Electronics,Communications, ISR, Electronics
-MFR009,General Dynamics,USA,GD,NYSE,Aerospace & Defense,IT Systems, Munitions
-MFR010,BAE Systems,UK,BA.L,LSE,Aerospace & Defense,Electronics, Munitions
-MFR011,Caterpillar,USA,CAT,NYSE,Heavy Equipment,Bulldozers, Engineering Equipment
-MFR012,IMI Systems (Elbit subsidiary),Israel,ESLT,NASDAQ,Defense,Ammunition, Land Systems
-MFR013,Elta Systems (IAI subsidiary),Israel,N/A,Private,Defense Electronics,Radar, EW, SIGINT
-MFR014,Textron,USA,TXT,NYSE,Aerospace,UAVs, Aviation Systems
-MFR015,General Atomics,USA,N/A,Private,Defense,UAVs (MQ-9 for intel sharing)
-MFR016,Collins Aerospace (RTX),USA,RTX,NYSE,Aerospace,Avionics, Electronics
-MFR017,Honeywell,USA,HON,NASDAQ,Aerospace,Avionics, Engines
-MFR018,Pratt & Whitney (RTX),USA,RTX,NYSE,Aerospace,Jet Engines (F-35)
-MFR019,Leonardo,Italy,LDO.MI,Italian Stock Exchange,Aerospace & Defense,Electronics, Helicopters
-MFR020,Thales,France,HO.PA,Euronext Paris,Defense Electronics,Radar, Communications
+MFR001,Lockheed Martin,USA,LMT,NYSE,Aerospace & Defense,"F-35; F-16; Missiles"
+MFR002,Boeing,USA,BA,NYSE,Aerospace & Defense,"F-15; Apache; JDAM; Satellites"
+MFR003,Raytheon Technologies,USA,RTX,NYSE,Aerospace & Defense,"Missiles; Radar; Air Defense"
+MFR004,Northrop Grumman,USA,NOC,NYSE,Aerospace & Defense,"Radar; UAVs; Electronics"
+MFR005,Elbit Systems,Israel,ESLT,NASDAQ,Aerospace & Defense,"UAVs; Land Systems; Avionics"
+MFR006,Israel Aerospace Industries (IAI),Israel,N/A,Private (State-owned),Aerospace & Defense,"UAVs; Missiles; Radar"
+MFR007,Rafael Advanced Defense,Israel,N/A,Private (State-owned),Aerospace & Defense,"Missiles; Bombs; Air Defense"
+MFR008,L3Harris Technologies,USA,LHX,NYSE,Defense Electronics,"Communications; ISR; Electronics"
+MFR009,General Dynamics,USA,GD,NYSE,Aerospace & Defense,"IT Systems; Munitions"
+MFR010,BAE Systems,UK,BA.L,LSE,Aerospace & Defense,"Electronics; Munitions"
+MFR011,Caterpillar,USA,CAT,NYSE,Heavy Equipment,"Bulldozers; Engineering Equipment"
+MFR012,IMI Systems (Elbit subsidiary),Israel,ESLT,NASDAQ,Defense,"Ammunition; Land Systems"
+MFR013,Elta Systems (IAI subsidiary),Israel,N/A,Private,Defense Electronics,"Radar; EW; SIGINT"
+MFR014,Textron,USA,TXT,NYSE,Aerospace,"UAVs; Aviation Systems"
+MFR015,General Atomics,USA,N/A,Private,Defense,"UAVs (MQ-9 for intel sharing)"
+MFR016,Collins Aerospace (RTX),USA,RTX,NYSE,Aerospace,"Avionics; Electronics"
+MFR017,Honeywell,USA,HON,NASDAQ,Aerospace,"Avionics; Engines"
+MFR018,Pratt & Whitney (RTX),USA,RTX,NYSE,Aerospace,"Jet Engines (F-35)"
+MFR019,Leonardo,Italy,LDO.MI,Italian Stock Exchange,Aerospace & Defense,"Electronics; Helicopters"
+MFR020,Thales,France,HO.PA,Euronext Paris,Defense Electronics,"Radar; Communications"
