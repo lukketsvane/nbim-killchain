@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "version": "2.0",
+    "lastUpdated": "2025-12-02",
+    "description": "Kjeldereferansar for NBIM Kill Chain-analysen"
+  },
+  "sources": {
+    "nbim_annual_2023": {
+      "id": "nbim_annual_2023",
+      "title": "NBIM Annual Report 2023",
+      "url": "https://www.nbim.no/en/news-and-insights/reports/2023/annual-report-2023/web-report-annual-report-2023/",
+      "type": "official",
+      "accessed": "2025-12-01"
+    },
+    "nbim_holdings_2023": {
+      "id": "nbim_holdings_2023",
+      "title": "NBIM Holdings Report 2023",
+      "url": "https://www.nbim.no/no/holdingsdata/eq_2023_country.pdf",
+      "type": "official",
+      "accessed": "2025-12-01"
+    },
+    "nbim_exclusions": {
+      "id": "nbim_exclusions",
+      "title": "NBIM Observation and Exclusion of Companies",
+      "url": "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+      "type": "official",
+      "accessed": "2025-12-01"
+    },
+    "un_albanese_report": {
+      "id": "un_albanese_report",
+      "title": "A/HRC/59/23 - From Economy of Occupation to Economy of Genocide",
+      "url": "https://www.ohchr.org/sites/default/files/documents/hrbodies/hrcouncil/sessions-regular/session59/advance-version/a-hrc-59-23-aev.pdf",
+      "type": "un_report",
+      "accessed": "2025-12-01"
+    },
+    "972mag_lavender": {
+      "id": "972mag_lavender",
+      "title": "'Lavender': The AI machine directing Israel's bombing spree in Gaza",
+      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "type": "journalism",
+      "accessed": "2025-12-01"
+    },
+    "972mag_nimbus": {
+      "id": "972mag_nimbus",
+      "title": "Inside Israel's deal with Google and Amazon",
+      "url": "https://www.972mag.com/project-nimbus-contract-google-amazon-israel/",
+      "type": "journalism",
+      "accessed": "2025-12-01"
+    },
+    "guardian_gospel": {
+      "id": "guardian_gospel",
+      "title": "'The Gospel': how Israel uses AI to select bombing targets in Gaza",
+      "url": "https://www.theguardian.com/world/2023/dec/01/the-gospel-how-israel-uses-ai-to-select-bombing-targets",
+      "type": "journalism",
+      "accessed": "2025-12-01"
+    },
+    "hrw_digital_tools": {
+      "id": "hrw_digital_tools",
+      "title": "Questions and Answers: Israeli Military's Use of Digital Tools in Gaza",
+      "url": "https://www.hrw.org/news/2024/09/10/questions-and-answers-israeli-militarys-use-digital-tools-gaza",
+      "type": "ngo_report",
+      "accessed": "2025-12-01"
+    },
+    "whoprofits_motorola": {
+      "id": "whoprofits_motorola",
+      "title": "The Israeli Occupation Industry - Motorola Solutions",
+      "url": "https://www.whoprofits.org/companies/company/3808",
+      "type": "ngo_report",
+      "accessed": "2025-12-01"
+    },
+    "whoprofits_cisco": {
+      "id": "whoprofits_cisco",
+      "title": "The Israeli Occupation Industry - Cisco Systems",
+      "url": "https://www.whoprofits.org/companies/company/6529?cisco-systems",
+      "type": "ngo_report",
+      "accessed": "2025-12-01"
+    },
+    "wikipedia_nimbus": {
+      "id": "wikipedia_nimbus",
+      "title": "Project Nimbus - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Project_Nimbus",
+      "type": "reference",
+      "accessed": "2025-12-01"
+    },
+    "amnesty_facial_recognition": {
+      "id": "amnesty_facial_recognition",
+      "title": "Israel/OPT: Israeli authorities are using facial recognition technology",
+      "url": "https://www.amnesty.org/en/latest-news/2023/05/israel-opt-israeli-authorities-are-using-facial-recognition-technology-to-entrench-apartheid/",
+      "type": "ngo_report",
+      "accessed": "2025-12-01"
+    },
+    "pax_dontbuyinto": {
+      "id": "pax_dontbuyinto",
+      "title": "The Private Actors Behind the Economy of Occupation and Genocide - PAX",
+      "url": "https://paxforpeace.nl/wp-content/uploads/sites/2/2025/11/DontBuyIntoOccupationV2025.pdf",
+      "type": "ngo_report",
+      "accessed": "2025-12-01"
+    },
+    "kedglobal_lignex1": {
+      "id": "kedglobal_lignex1",
+      "title": "LIG Nex1 to buy quadruped robot maker Ghost Robotics",
+      "url": "https://www.kedglobal.com/mergers-acquisitions/newsView/ked202312100002",
+      "type": "journalism",
+      "accessed": "2025-12-01"
+    },
+    "sec_13f_filings": {
+      "id": "sec_13f_filings",
+      "title": "SEC EDGAR 13F Holdings Reports",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=norges+bank&type=13F",
+      "type": "official",
+      "accessed": "2025-12-01"
+    }
+  }
+}

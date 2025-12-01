@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "version": "2.0",
+    "generated": "2025-12-02",
+    "total_queries": 15
+  },
+  "queries": [
+    {
+      "id": "nbim_holdings_update",
+      "description": "Hent oppdaterte NBIM eigarskapsdata for alle kill chain-selskap",
+      "keywords": [
+        "NBIM holdings",
+        "Government Pension Fund Global",
+        "equity holdings"
+      ],
+      "sources": [
+        "official"
+      ],
+      "phase": null,
+      "priority": 1
+    },
+    {
+      "id": "sec_13f_filings",
+      "description": "Verifiser NBIM aksjeposisjonar via SEC 13F-filings",
+      "keywords": [
+        "SEC 13F",
+        "Norges Bank",
+        "institutional holdings"
+      ],
+      "sources": [
+        "official"
+      ],
+      "phase": null,
+      "priority": 1
+    },
+    {
+      "id": "nimbus_contract_details",
+      "description": "Detaljar om Project Nimbus-kontrakten og militær bruk",
+      "keywords": [
+        "Project Nimbus",
+        "Google Israel",
+        "AWS Israel",
+        "IDF cloud"
+      ],
+      "sources": [
+        "journalism",
+        "ngo_report"
+      ],
+      "phase": "fix",
+      "priority": 1
+    },
+    {
+      "id": "lavender_technical",
+      "description": "Tekniske detaljar om Lavender AI-systemet",
+      "keywords": [
+        "Lavender AI",
+        "IDF targeting",
+        "machine learning Gaza"
+      ],
+      "sources": [
+        "journalism",
+        "academic"
+      ],
+      "phase": "track",
+      "priority": 1
+    },
+    {
+      "id": "gospel_system",
+      "description": "The Gospel (Habsora) strukturell målgenerering",
+      "keywords": [
+        "Gospel Habsora",
+        "AI targeting buildings",
+        "Unit 8200"
+      ],
+      "sources": [
+        "journalism"
+      ],
+      "phase": "track",
+      "priority": 2
+    },
+    {
+      "id": "palantir_idf_partnership",
+      "description": "Palantir strategisk partnarskap med IDF",
+      "keywords": [
+        "Palantir Israel",
+        "Gotham IDF",
+        "AIP military"
+      ],
+      "sources": [
+        "journalism",
+        "corporate"
+      ],
+      "phase": "target",
+      "priority": 1
+    },
+    {
+      "id": "wolf_pack_systems",
+      "description": "Wolf Pack biometriske overvakingssystem",
+      "keywords": [
+        "Blue Wolf",
+        "Red Wolf",
+        "Wolf Pack database",
+        "facial recognition Gaza"
+      ],
+      "sources": [
+        "ngo_report",
+        "journalism"
+      ],
+      "phase": "find",
+      "priority": 2
+    },
+    {
+      "id": "cisco_idf_infrastructure",
+      "description": "Cisco nettverksinfrastruktur for IDF",
+      "keywords": [
+        "Cisco IDF",
+        "David's Citadel",
+        "Israel Rises platform"
+      ],
+      "sources": [
+        "ngo_report"
+      ],
+      "phase": "target",
+      "priority": 2
+    },
+    {
+      "id": "motorola_mountain_rose",
+      "description": "Motorola Mountain Rose kryptert kommunikasjon",
+      "keywords": [
+        "Mountain Rose",
+        "Vered Harim",
+        "Motorola IDF",
+        "encrypted cellular"
+      ],
+      "sources": [
+        "ngo_report"
+      ],
+      "phase": "find",
+      "priority": 2
+    },
+    {
+      "id": "ghost_robotics_gaza",
+      "description": "Ghost Robotics Vision 60 i Gaza-tunnellar",
+      "keywords": [
+        "Ghost Robotics",
+        "Vision 60",
+        "LIG Nex1",
+        "robot dog Gaza"
+      ],
+      "sources": [
+        "journalism"
+      ],
+      "phase": "find",
+      "priority": 2
+    },
+    {
+      "id": "nbim_exclusion_decisions",
+      "description": "NBIM eksklusjonsbeslutningar og grunngjeving",
+      "keywords": [
+        "NBIM exclusion",
+        "Council on Ethics",
+        "divestment Israel"
+      ],
+      "sources": [
+        "official"
+      ],
+      "phase": null,
+      "priority": 1
+    },
+    {
+      "id": "semiconductor_supply_chain",
+      "description": "Halvleiar-forsyningskjede til IDF-system",
+      "keywords": [
+        "NVIDIA Israel",
+        "Intel Mobileye",
+        "chip supply IDF"
+      ],
+      "sources": [
+        "journalism",
+        "corporate"
+      ],
+      "phase": "track",
+      "priority": 3
+    },
+    {
+      "id": "jet_fuel_supply",
+      "description": "Drivstoffleveransar til IDF luftoperasjonar",
+      "keywords": [
+        "JP-8 Israel",
+        "jet fuel IDF",
+        "Valero Israel"
+      ],
+      "sources": [
+        "journalism"
+      ],
+      "phase": "engage",
+      "priority": 3
+    },
+    {
+      "id": "un_albanese_companies",
+      "description": "Selskap identifisert i Albanese-rapporten A/HRC/59/23",
+      "keywords": [
+        "Albanese report",
+        "A/HRC/59/23",
+        "corporate complicity genocide"
+      ],
+      "sources": [
+        "un_report"
+      ],
+      "phase": null,
+      "priority": 1
+    },
+    {
+      "id": "storebrand_divestments",
+      "description": "Storebrand/KLP divesterings-beslutningar for samanlikning",
+      "keywords": [
+        "Storebrand Palantir",
+        "KLP divestment",
+        "Norwegian investors Israel"
+      ],
+      "sources": [
+        "journalism"
+      ],
+      "phase": null,
+      "priority": 2
+    }
+  ],
+  "companies": [
+    "MSFT",
+    "NVDA",
+    "GOOGL",
+    "AMZN",
+    "META",
+    "PLTR",
+    "CSCO",
+    "IBM",
+    "RTX",
+    "AVGO",
+    "MSI",
+    "079550.KS",
+    "APH",
+    "VLO",
+    "INTC",
+    "GE",
+    "DELL",
+    "HPQ",
+    "HPE"
+  ],
+  "data_sources": {
+    "nbim_holdings": {
+      "base_url": "https://www.nbim.no/hr/report/",
+      "params": {
+        "category": "eq",
+        "sortby": "country",
+        "filetype": "xlsx"
+      },
+      "update_frequency": "quarterly"
+    },
+    "sec_edgar": {
+      "base_url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "params": {
+        "action": "getcompany",
+        "company": "norges bank",
+        "type": "13F"
+      },
+      "update_frequency": "quarterly"
+    }
+  }
+}

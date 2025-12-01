@@ -1,160 +1,206 @@
-# IDF Kill Chain Ownership Analysis
+# NBIM Kill Chain Analysis
 
-## Prosjektskildring
+**Kartlegging av Oljefondets (SPU/NBIM) strukturelle eigarskap i Gaza Kill Chain-infrastrukturen**
 
-Dette prosjektet dokumenterer eigarskapsstrukturar i den militære infrastrukturen som nyttast av Israel Defense Forces (IDF) i militære operasjonar mot Gaza. Målet er å etablere transparens rundt kven som profitterer på og har eigarskap i selskapa som produserer våpen, fly, missil, etterretningssystem og anna militært utstyr.
+> Versjon 2.0 | Sist oppdatert: Desember 2025
 
-## Datastruktur
+## Samandrag
 
-### Hovudfiler
+Dette prosjektet dokumenterer korleis Statens pensjonsfond utland (SPU), verdens største statlege investeringsfond med ein verdi på $1,9 billionar, eig mellom **1,0% og 3,8%** av selskapa som utgjer den integrerte "kill chain"-infrastrukturen brukt i Gaza-krigen sidan 7. oktober 2023.
 
-#### 1. `data/military_systems.csv`
-Dokumenterer alle hovudsystem i IDF sin militære infrastruktur:
-- **Kolumner**: system_id, system_name, system_type, manufacturer, country, role_in_killchain, used_in_gaza_2023_2024
-- **Eksempel**: F-35I Adir, F-16I Sufa, JDAM bomber, SPICE-missil, UAV-system
-- **40 system** dokumentert
+### Nøkkeltal
 
-#### 2. `data/manufacturers.csv`
-Alle produsenter av militært utstyr:
-- **Kolumner**: manufacturer_id, manufacturer_name, country, stock_ticker, stock_exchange, sector, primary_products
-- **Hovudselskap**: Lockheed Martin, Boeing, Raytheon, Northrop Grumman, Elbit Systems, IAI, Rafael
-- **20 selskap** dokumentert
+| Metrikk | Verdi |
+|---------|-------|
+| Total eksponering | ~$208 milliardar |
+| Vekta gjennomsnittleg eigarskap | ~1,16% |
+| Høgaste eigarposisjon | Microsoft: 3,8% ($43,8 mrd) |
+| Identifiserte selskap | 48+ |
+| Ekskluderte selskap (markedsverdi) | ~$732 milliardar |
+| Palantir-auke 2023-2024 | 15x |
 
-#### 3. `data/major_shareholders.csv`
-Hovudinvestorar og aksjonærar:
-- **Kolumner**: shareholder_id, shareholder_name, shareholder_type, country, total_aum_usd_billions
-- **Typar**: Asset managers, pensjonsfond, statlige fond, bankar
-- **30 investorar** dokumentert
-- **Totalt AUM**: Over $50 billionar USD
+### Det strukturelle paradokset
 
-#### 4. `data/ownership_stakes.csv`
-Detaljert eigarskap i kvart selskap:
-- **Kolumner**: ownership_id, shareholder_id, shareholder_name, manufacturer_id, manufacturer_name, stock_ticker, shares_held_millions, ownership_percentage, market_value_usd_millions, as_of_date
-- **63 eigarskapsforhold** dokumentert
-- **Dato**: Per 30. juni 2024
+SPU eig nesten **4 gonger meir** av sky-infrastrukturen (Microsoft) som husar måldataene enn det fondet eide av bulldoserane (Caterpillar) som jevna heimane med jorda.
 
-#### 5. `data/system_components.csv`
-Komponentnivå for kvar våpensystem:
-- **Kolumner**: component_id, system_id, system_name, component_name, manufacturer_id, manufacturer_name, component_role, estimated_value_per_unit_usd_millions
-- **Eksempel**: F-35 består av airframe (Lockheed Martin), motor (Pratt & Whitney), radar (Northrop Grumman), israelske system (Elbit)
-- **66 komponentar** dokumentert
+## Kill Chain-arkitekturen (F2T2EA)
 
-#### 6. `data/infrastructure_ownership_analysis.csv`
-**HOVUDANALYSE**: Berekna eigarskapsandel i heile kill chain-infrastrukturen:
-- **Kolumner**:
-  - investor_name, investor_type, country
-  - total_investment_usd_millions
-  - pct_ownership_f35_infrastructure
-  - pct_ownership_f16_infrastructure
-  - pct_ownership_f15_infrastructure
-  - pct_ownership_munitions_infrastructure
-  - pct_ownership_isr_uav_infrastructure
-  - pct_ownership_targeting_infrastructure
-  - pct_ownership_c4isr_infrastructure
-  - pct_ownership_ground_systems_infrastructure
-  - weighted_avg_killchain_ownership_pct
-  - nbim_excluded_status
+```
+FIND → FIX → TRACK → TARGET → ENGAGE → ASSESS
+ │      │      │        │        │        │
+ │      │      │        │        │        └─ Cloud Analytics
+ │      │      │        │        └─ Våpen, Fly, Bulldoserar
+ │      │      │        └─ Kommando & Kontroll (C4I)
+ │      │      └─ AI-algoritmar (Lavender, Gospel)
+ │      └─ Cloud Computing, Datasjøar
+ └─ Overvaking, Droner, Biometri
+```
 
-**Hovudfunn**:
-- **BlackRock**: 9.39% gjennomsnittleg eigarskap i heile infrastrukturen
-- **Vanguard**: 8.49% gjennomsnittleg eigarskap
-- **State Street**: 6.02% gjennomsnittleg eigarskap
-- **Norges Bank (NBIM)**: 1.12% gjennomsnittleg eigarskap (ekskluderer Elbit Systems)
+### SPU-eigarskap per fase
 
-#### 7. `data/gaza_operations_data.csv`
-Dokumenterte militære operasjonar i Gaza med våpensystem:
-- **Kolumner**: date, operation_type, munition_type, system_id, system_name, manufacturer_primary, estimated_units_used, estimated_cost_usd_millions, target_type, location_gaza, casualties_reported
-- **Periode**: Oktober 2023 - november 2024
-- **51 operasjonar** dokumentert
-- **Inkluderer**: Antal våpen brukt, kostnad, mål, lokasjon, rapporterte ofre
+| Fase | Funksjon | Hovudselskap | SPU-eigarskap |
+|------|----------|--------------|---------------|
+| **FIND** | Overvaking, biometri | Motorola, LIG Nex1, Meta | 1,8-2,5% |
+| **FIX** | Cloud computing | Microsoft, Google, Amazon | **2,5-3,8%** |
+| **TRACK** | AI-targeting | Microsoft, Palantir, NVIDIA | ~1,8% |
+| **TARGET** | C4I | Cisco, Broadcom | 1,2-1,6% |
+| **ENGAGE** | Kinetisk | RTX, Valero | 1,0-1,1% |
+| **ASSESS** | Analyse | Google, Amazon | 1,8% |
 
-## Hovudfunn
+## Prosjektstruktur
 
-### Top 5 Investorar i Kill Chain-infrastrukturen
+```
+nbim-killchain/
+├── data/
+│   ├── companies.json      # Selskapsdata med kjeldereferansar
+│   ├── kill_chain.json     # Kill chain-faser og system
+│   ├── sources.json        # Kjelderegister
+│   └── research_plan.json  # Automatisert research-plan
+├── scripts/
+│   ├── analyze_ownership.py        # Eigarskapsanalyse
+│   ├── research_config.py          # Research-konfigurasjon
+│   └── generate_visualizations.py  # Visualiseringar
+├── assets/js/
+│   ├── data.js             # Frontend-data med kjelder
+│   └── main.js             # Applikasjonslogikk
+├── ressursar/              # PDF-ar og diagram
+├── index.html              # Dashboard
+├── killchain.html          # Kill chain-visualisering
+└── companies.html          # Selskapsoversikt
+```
 
-| Investor | Type | Land | Gjennomsnittleg eigarskap | Total investering (millionar USD) |
-|----------|------|------|---------------------------|-----------------------------------|
-| BlackRock | Asset Manager | USA | 9.39% | $137,335 |
-| Vanguard Group | Asset Manager | USA | 8.49% | $127,725 |
-| State Street | Asset Manager | USA | 6.02% | $79,152 |
-| Capital Group | Asset Manager | USA | 5.88% | $72,340 |
-| Fidelity | Asset Manager | USA | 2.89% | $37,730 |
+## Datastruktur med kjeldereferansar
 
-### NBIM (Norges Bank Investment Management)
+All data i prosjektet har direkte kopling til verifiserbare kjelder:
 
-- **Gjennomsnittleg eigarskap**: 1.12% av heile kill chain-infrastrukturen
-- **Total investering**: $15,344 millionar USD
-- **Status**: Ekskluderer Elbit Systems (0% eigarskap)
-- **Eigarskap i nøkkelselskap**:
-  - Lockheed Martin (F-35, F-16): 1.14%
-  - Boeing (F-15, Apache, JDAM): 1.6%
-  - Raytheon (missil, radar): 1.26%
-  - Northrop Grumman (radar, elektronikk): 1.38%
-  - Caterpillar (D9 bulldozers): 1.29%
+```json
+{
+  "id": "msft",
+  "name": "Microsoft",
+  "nbim_pct": 3.8,
+  "value_usd": 43800000000,
+  "role": "Azure MoD-kontrakt, Unit 8200, Project Nimbus",
+  "sources": ["nbim_holdings_2023", "972mag_nimbus"]
+}
+```
+
+## Hovudkjelder
+
+### Offisielle kjelder
+- [NBIM Årsrapport 2023](https://www.nbim.no/en/news-and-insights/reports/2023/annual-report-2023/)
+- [NBIM Eksklusjonsliste](https://www.nbim.no/en/responsible-investment/exclusion-of-companies/)
+- [SEC EDGAR 13F-filings](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=norges+bank&type=13F)
+
+### FN-dokumentar
+- [A/HRC/59/23 "From Economy of Occupation to Economy of Genocide"](https://www.ohchr.org/sites/default/files/documents/hrbodies/hrcouncil/sessions-regular/session59/advance-version/a-hrc-59-23-aev.pdf) - Francesca Albanese, juni 2025
+
+### Undersøkande journalistikk
+- [+972 Magazine: Lavender AI-system](https://www.972mag.com/lavender-ai-israeli-army-gaza/)
+- [+972 Magazine: Project Nimbus](https://www.972mag.com/project-nimbus-contract-google-amazon-israel/)
+- [The Guardian: The Gospel](https://www.theguardian.com/world/2023/dec/01/the-gospel-how-israel-uses-ai-to-select-bombing-targets)
+
+### NGO-rapportar
+- [Who Profits: Cisco Systems](https://www.whoprofits.org/companies/company/6529?cisco-systems)
+- [Who Profits: Motorola Solutions](https://www.whoprofits.org/companies/company/3808)
+- [Amnesty: Facial Recognition](https://www.amnesty.org/en/latest/news/2023/05/israel-opt-israeli-authorities-are-using-facial-recognition-technology-to-entrench-apartheid/)
+- [Human Rights Watch: Digital Tools in Gaza](https://www.hrw.org/news/2024/09/10/questions-and-answers-israeli-militarys-use-digital-tools-gaza)
+
+## Nøkkelsystem
+
+### AI-målsystem
+
+| System | Funksjon | Mål generert | Kjelde |
+|--------|----------|--------------|--------|
+| **Lavender** | Menneske-targeting | 37,000+ | [+972](https://www.972mag.com/lavender-ai-israeli-army-gaza/) |
+| **The Gospel** | Struktur-targeting | N/A | [Guardian](https://www.theguardian.com/world/2023/dec/01/the-gospel-how-israel-uses-ai-to-select-bombing-targets) |
+| **Where's Daddy?** | Geolokalisering | N/A | [+972](https://www.972mag.com/lavender-ai-israeli-army-gaza/) |
+
+### Project Nimbus
+
+$1,2 milliardar-kontrakt mellom Google/Amazon og israelske myndigheiter for sky-infrastruktur.
+
+- **Leverandørar**: Google Cloud, AWS
+- **SPU-eigarskap**: Google 2,1%, Amazon 1,6%
+- **Kjelde**: [Wikipedia](https://en.wikipedia.org/wiki/Project_Nimbus), [+972 Magazine](https://www.972mag.com/project-nimbus-contract-google-amazon-israel/)
+
+## Research-automatisering
+
+Prosjektet inkluderer konfigurasjon for automatisert research:
+
+```python
+# scripts/research_config.py
+from research_config import get_priority_queries, export_research_plan
+
+# Hent høgprioritets research-oppgåver
+queries = get_priority_queries(max_priority=1)
+
+# Eksporter plan for parallelle agentar
+export_research_plan("data/research_plan.json")
+```
+
+### Research-prioritetar
+
+1. **Prioritet 1**: NBIM holdings, SEC 13F, Project Nimbus, Lavender, Palantir
+2. **Prioritet 2**: Wolf Pack, Cisco, Motorola, Ghost Robotics
+3. **Prioritet 3**: Halvleiar-forsyningskjede, drivstoff
+
+## Installasjon og bruk
+
+```bash
+# Klon repo
+git clone https://github.com/[username]/nbim-killchain.git
+cd nbim-killchain
+
+# Installer avhengigheiter (Python)
+pip install -r requirements.txt
+
+# Køyr eigarskapsanalyse
+python scripts/analyze_ownership.py
+
+# Generer research-plan
+python scripts/research_config.py
+```
 
 ## Metodologi
 
-### Berekning av eigarskapsandel
+### Eigarskapsberekningar
 
-Eigarskapsandelen i infrastrukturen er berekna ved:
+1. **Direkte eigarskap**: SPU prosentdel av utestående aksjar
+2. **Verdi**: Aksjeposisjon × aksjekurs
+3. **Kill chain-mapping**: Selskap → Produkt → Fase i kill chain
 
-1. **Komponentvekting**: Kvar våpensystem er dekomponert i komponentar (airframe, motor, radar, etc.)
-2. **Verdivekting**: Kvar komponent er vekta etter estimert verdi
-3. **Eigarskapsmapping**: Eigarskapsandel i produsenten av kvar komponent
-4. **Aggregering**: Samla eigarskap på tvers av alle system
+### Begrensningar
 
-**Eksempel - F-35I Adir**:
-- Airframe (Lockheed Martin): $85M - 60.7%
-- Motor (Pratt & Whitney/RTX): $18M - 12.9%
-- Radar (Northrop Grumman): $12M - 8.6%
-- Avionikk (Collins/RTX): $8.5M - 6.1%
-- Targeting (Lockheed Martin): $4.2M - 3.0%
-- Israelske system (Elbit): $5M - 3.6%
+1. **Attribusjonusikkerheit**: Kva produkt brukast faktisk i targeting?
+2. **Inntektsallokering**: Project Nimbus er ~0,05% av Google Cloud-omsetning
+3. **Dual-use**: Hardware tener sivile/militære formål globalt
+4. **Kapitalfungibilitet**: Om SPU sel, overtek andre investorar
 
-For ein investor med 8% eigarskap i Lockheed Martin, 9% i RTX, og 12% i Northrop Grumman:
-- F-35 eigarskap = (0.607 × 0.08) + (0.036 × 0.00) + (0.129+0.061) × 0.09 + (0.086 × 0.12) = 7.66%
+## Tidslinje
 
-### Datakjelder
+| Dato | Hending |
+|------|---------|
+| Apr 2021 | Project Nimbus signert |
+| Sep 2009 | Elbit ekskludert |
+| 7. okt 2023 | Gaza-krigen startar |
+| Jan 2024 | Palantir-IDF partnarskap |
+| Sep 2024 | General Dynamics ekskludert |
+| Okt 2024 | Storebrand sel Palantir |
+| Aug 2025 | Caterpillar ekskludert |
+| Nov 2025 | Etikkrammeverket suspendert |
 
-- **Eigarskapdata**: SEC 13F filings, Bloomberg, FactSet (per Q2 2024)
-- **Våpensystemdata**: SIPRI, Jane's Defence, IDF offentlege kjeder
-- **Gaza-operasjonar**: Dokumenterte hendingar frå FN, OCHA, B'Tselem, menneskeretstilsyn
-- **Kontraktar**: US Foreign Military Sales (FMS), israelske forsvarsbudsjett
+## Lisens
 
-## Viktige presiseringar
+MIT License - Sjå [LICENSE](LICENSE)
 
-### Limitasjonar
+## Bidrag
 
-1. **Israelske statsselskap**: IAI og Rafael er statseigna - eigarskapsstruktur ikkje offentleg
-2. **Indirekte eigarskap**: ETF-ar og indeksfond gir indirekte eksponering
-3. **Dynamiske data**: Eigarskap endrar seg kvartalsvis
-4. **Estimat**: Våpenbruk og komponentverdi er estimat basert på offentleg tilgjengeleg info
+Bidrag er velkomne! Sjå [CONTRIBUTING.md](CONTRIBUTING.md) for retningslinjer.
 
-### Etiske konsiderasjonar
+## Kontakt
 
-Dette prosjektet er ikkje:
-- Ein investeringsråd
-- Ein politisk kampanje mot spesifikke selskap
-- Ein uttømmande juridisk analyse
+For spørsmål eller samarbeid, opne ein issue på GitHub.
 
-Dette prosjektet **er**:
-- Eit forsøk på transparens om kven som profitterer på krig
-- Grunnlag for informerte avgjerder for investorar, pensjonsfond og politikarar
-- Dokumentasjon av samanheng mellom finans og militær infrastruktur
+---
 
-## Vidare analyse
-
-### Planlagde tillegg
-
-1. **Tidsserieanalyse**: Eigarskap over tid (2020-2024)
-2. **Kontraktsanalyse**: FMS-kontraktar og leveransar til Israel
-3. **Profittanalyse**: Aksjekurs og profitt for produsenter under Gaza-krigen
-4. **Leverandørkjede**: Sub-kontraktørar og leverandørar
-5. **Lobbyisme**: Politiske bidrag og lobbyverksemd
-
-### Visualiseringar (planlagt)
-
-- Sankey-diagram: Investorflyt til produsenter til våpensystem
-- Nettverk-graf: Eigarskapsnettverket
-- Interaktiv tabell: Filtrer etter investor/produsent/våpen
-- Tidslinje: Gaza-operasjonar med våpenbruk
+*Dette dokumentet er meint som ei oversikt for forskingsformål. Alle tal er estimat basert på tilgjengelege kjelder.*

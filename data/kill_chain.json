@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "version": "2.0",
+    "lastUpdated": "2025-12-02",
+    "model": "F2T2EA Kill Chain",
+    "description": "Find-Fix-Track-Target-Engage-Assess cycle mapping to NBIM ownership"
+  },
+  "phases": {
+    "find": {
+      "name": "FIND",
+      "description": "Collection - Surveillance, drones, biometrics, SIGINT",
+      "spuOwnershipRange": "1.8% - 2.5%",
+      "primaryCompanies": ["msi", "lignex1", "aph", "meta"],
+      "systems": [
+        {
+          "name": "Wolf Pack",
+          "type": "Biometric database",
+          "description": "Red Wolf (CCTV), Blue Wolf (mobile app), Wolf Pack DB",
+          "sources": ["amnesty_facial_recognition"]
+        },
+        {
+          "name": "Smart Fence (Iron Wall)",
+          "type": "Border surveillance",
+          "description": "Mars sensors, underground sensors, Sentry Tech RCWS",
+          "sources": ["nbim_exclusions"]
+        },
+        {
+          "name": "Oron Aircraft",
+          "type": "Aerial ISR",
+          "description": "Modified Gulfstream G550 with SIGINT/VISINT",
+          "sources": ["nbim_holdings_2023"]
+        }
+      ],
+      "sources": ["972mag_lavender", "amnesty_facial_recognition"]
+    },
+    "fix": {
+      "name": "FIX",
+      "description": "Processing - Cloud computing, data lakes, data fusion",
+      "spuOwnershipRange": "2.5% - 3.8%",
+      "primaryCompanies": ["msft", "googl", "amzn"],
+      "systems": [
+        {
+          "name": "Project Nimbus",
+          "type": "Sovereign cloud",
+          "description": "$1.2B contract for Google Cloud and AWS",
+          "contractValue": 1200000000,
+          "contractDuration": "7 years",
+          "startDate": "2021-04",
+          "sources": ["972mag_nimbus", "wikipedia_nimbus"]
+        },
+        {
+          "name": "Data Lake Infrastructure",
+          "type": "Storage",
+          "description": "Petabyte-scale storage for drone feeds, SIGINT, VISINT",
+          "sources": ["972mag_nimbus"]
+        }
+      ],
+      "sources": ["972mag_nimbus", "wikipedia_nimbus"]
+    },
+    "track": {
+      "name": "TRACK",
+      "description": "AI algorithms - Lavender, Gospel, Where's Daddy?",
+      "spuOwnershipRange": "~1.8%",
+      "primaryCompanies": ["msft", "pltr", "meta", "nvda"],
+      "systems": [
+        {
+          "name": "Lavender",
+          "type": "AI human targeting",
+          "description": "Scores 1-100 probability of militant affiliation for all Gaza residents",
+          "targetsGenerated": 37000,
+          "humanVerificationTime": "~20 seconds",
+          "algorithm": "Positive Unlabeled Learning",
+          "sources": ["972mag_lavender", "hrw_digital_tools"]
+        },
+        {
+          "name": "The Gospel (Habsora)",
+          "type": "AI structural targeting",
+          "description": "Identifies buildings, tunnels, launch sites using computer vision",
+          "output": "Target Recommendation file with 3D coordinates, weapon type, CDE",
+          "sources": ["guardian_gospel"]
+        },
+        {
+          "name": "Where's Daddy?",
+          "type": "Geolocation trigger",
+          "description": "Alerts when target enters specific location (often home)",
+          "technique": "Geofencing + cellular triangulation",
+          "sources": ["972mag_lavender"]
+        }
+      ],
+      "sources": ["972mag_lavender", "guardian_gospel", "hrw_digital_tools"]
+    },
+    "target": {
+      "name": "TARGET",
+      "description": "Decision - Command & Control, C4ISR, authorization",
+      "spuOwnershipRange": "1.2% - 1.6%",
+      "primaryCompanies": ["csco", "avgo", "pltr"],
+      "systems": [
+        {
+          "name": "David's Citadel",
+          "type": "Data center",
+          "description": "IDF central ICT hub in Negev desert",
+          "vendor": "Cisco Systems",
+          "sources": ["whoprofits_cisco"]
+        },
+        {
+          "name": "Palantir Gotham",
+          "type": "Integration platform",
+          "description": "Link-analysis graph, 'Single Pane of Glass' for ops",
+          "sources": ["un_albanese_report"]
+        },
+        {
+          "name": "Palantir Gaia",
+          "type": "Geospatial",
+          "description": "3D maps with target overlay, kill boxes",
+          "sources": ["un_albanese_report"]
+        }
+      ],
+      "sources": ["whoprofits_cisco", "un_albanese_report"]
+    },
+    "engage": {
+      "name": "ENGAGE",
+      "description": "Strike - Aircraft, armor, bulldozers, munitions",
+      "spuOwnershipRange": "1.0% - 1.1%",
+      "primaryCompanies": ["rtx", "vlo", "ge"],
+      "excludedCompanies": ["cat", "gd", "lmt", "ba"],
+      "systems": [
+        {
+          "name": "Iron Dome",
+          "type": "Air defense",
+          "description": "Interceptor missiles",
+          "vendor": "RTX (Raytheon)",
+          "sources": ["nbim_holdings_2023"]
+        },
+        {
+          "name": "F-35 Adir",
+          "type": "Fighter aircraft",
+          "description": "Primary strike platform",
+          "vendor": "Lockheed Martin (excluded)",
+          "sources": ["nbim_exclusions"]
+        },
+        {
+          "name": "D9 Bulldozer",
+          "type": "Engineering vehicle",
+          "description": "Armored bulldozer for demolition",
+          "vendor": "Caterpillar (excluded 2025)",
+          "sources": ["nbim_exclusions"]
+        }
+      ],
+      "sources": ["nbim_holdings_2023", "nbim_exclusions"]
+    },
+    "assess": {
+      "name": "ASSESS",
+      "description": "Review - Battle damage assessment, cloud analytics",
+      "spuOwnershipRange": "1.8%",
+      "primaryCompanies": ["googl", "amzn", "pltr"],
+      "systems": [
+        {
+          "name": "Cloud Analytics",
+          "type": "Post-strike analysis",
+          "description": "Satellite imagery comparison, damage assessment AI",
+          "sources": ["972mag_nimbus"]
+        }
+      ],
+      "sources": ["972mag_nimbus"]
+    }
+  },
+  "summary": {
+    "totalSpuExposureUsd": 208000000000,
+    "weightedAvgOwnership": 1.16,
+    "highestOwnership": {
+      "company": "Microsoft",
+      "percentage": 3.8
+    },
+    "companiesInPortfolio": 48,
+    "excludedMarketCapUsd": 732000000000,
+    "structuralParadox": "SPU owns ~4x more of cloud infrastructure (Microsoft 3.8%) than it owned of bulldozers (Caterpillar 1.08%)"
+  }
+}
