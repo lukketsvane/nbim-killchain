@@ -1,0 +1,31 @@
+shareholder_id,shareholder_name,shareholder_type,country,total_aum_usd_billions
+SH001,Vanguard Group,Asset Manager,USA,8500
+SH002,BlackRock,Asset Manager,USA,9500
+SH003,State Street Corporation,Asset Manager,USA,4100
+SH004,Norges Bank Investment Management (NBIM),Sovereign Wealth Fund,Norway,1600
+SH005,Capital Group,Asset Manager,USA,2700
+SH006,Fidelity Investments,Asset Manager,USA,4500
+SH007,T. Rowe Price,Asset Manager,USA,1400
+SH008,Bank of America,Bank/Asset Manager,USA,3100
+SH009,JPMorgan Chase,Bank/Asset Manager,USA,3200
+SH010,Geode Capital Management,Asset Manager,USA,850
+SH011,Northern Trust,Asset Manager,USA,1300
+SH012,Wellington Management,Asset Manager,USA,1300
+SH013,Invesco,Asset Manager,USA,1600
+SH014,Goldman Sachs,Investment Bank,USA,2500
+SH015,Morgan Stanley,Investment Bank,USA,1400
+SH016,UBS,Bank,Switzerland,1100
+SH017,Credit Suisse (UBS),Bank,Switzerland,580
+SH018,Deutsche Bank,Bank,Germany,500
+SH019,HSBC,Bank,UK,620
+SH020,Amundi,Asset Manager,France,2100
+SH021,Legal & General,Asset Manager,UK,1700
+SH022,Allianz,Insurance/Asset Manager,Germany,2800
+SH023,Baillie Gifford,Asset Manager,UK,280
+SH024,California Public Employees (CalPERS),Pension Fund,USA,480
+SH025,California State Teachers (CalSTRS),Pension Fund,USA,330
+SH026,New York State Common,Pension Fund,USA,280
+SH027,Government of Singapore Investment Corp,Sovereign Wealth Fund,Singapore,690
+SH028,Abu Dhabi Investment Authority,Sovereign Wealth Fund,UAE,700
+SH029,China Investment Corporation,Sovereign Wealth Fund,China,1350
+SH030,Kuwait Investment Authority,Sovereign Wealth Fund,Kuwait,740

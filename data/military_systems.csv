@@ -1,0 +1,41 @@
+system_id,system_name,system_type,manufacturer,country,role_in_killchain,used_in_gaza_2023_2024
+SYS001,F-35I Adir,Fighter Aircraft,Lockheed Martin,USA,Strike Platform,Yes
+SYS002,F-16I Sufa,Fighter Aircraft,Lockheed Martin,USA,Strike Platform,Yes
+SYS003,F-15I Ra'am,Fighter Aircraft,Boeing,USA,Strike Platform,Yes
+SYS004,AH-64 Apache,Attack Helicopter,Boeing,USA,Strike Platform,Yes
+SYS005,Hermes 450,UAV,Elbit Systems,Israel,ISR/Strike,Yes
+SYS006,Hermes 900,UAV,Elbit Systems,Israel,ISR/Strike,Yes
+SYS007,Heron TP,UAV,IAI,Israel,ISR/Strike,Yes
+SYS008,Eitan UAV,UAV,IAI,Israel,ISR/Strike,Yes
+SYS009,JDAM (GBU-31/32/38),Guided Bomb,Boeing,USA,Munition,Yes
+SYS010,Paveway (GBU-12/16),Laser Guided Bomb,Raytheon,USA,Munition,Yes
+SYS011,SPICE 250,Precision Bomb,Rafael,Israel,Munition,Yes
+SYS012,SPICE 1000,Precision Bomb,Rafael,Israel,Munition,Yes
+SYS013,SPICE 2000,Precision Bomb,Rafael,Israel,Munition,Yes
+SYS014,GBU-39 SDB,Small Diameter Bomb,Boeing,USA,Munition,Yes
+SYS015,Spike NLOS,Missile,Rafael,Israel,Precision Strike,Yes
+SYS016,Delilah,Cruise Missile,IAI,Israel,Standoff Strike,Yes
+SYS017,MARS II,Loitering Munition,Rafael,Israel,Strike,Yes
+SYS018,Harop,Loitering Munition,IAI,Israel,Strike,Yes
+SYS019,Iron Dome,Air Defense,Rafael/Raytheon,Israel/USA,Defense,Yes
+SYS020,Arrow 3,BMD System,IAI/Boeing,Israel/USA,Defense,Yes
+SYS021,David's Sling,Air Defense,Rafael/Raytheon,Israel/USA,Defense,Yes
+SYS022,AN/APG-81 AESA Radar,Radar System,Northrop Grumman,USA,Targeting (F-35),Yes
+SYS023,AN/APG-68 Radar,Radar System,Northrop Grumman,USA,Targeting (F-16),Yes
+SYS024,AN/APG-70 Radar,Radar System,Raytheon,USA,Targeting (F-15),Yes
+SYS025,LITENING Targeting Pod,Targeting System,Rafael/Northrop Grumman,Israel/USA,Targeting,Yes
+SYS026,Sniper ATP,Targeting Pod,Lockheed Martin,USA,Targeting,Yes
+SYS027,ELM-2084 Radar,Ground Radar,IAI/Elta,Israel,Air Surveillance,Yes
+SYS028,Green Pine Radar,Early Warning Radar,IAI/Elta,Israel,Missile Warning,Yes
+SYS029,Unit 8200 Infrastructure,SIGINT/Cyber,Multiple vendors,Israel/USA,Intelligence,Yes
+SYS030,GPS/Galileo,Navigation,US DoD/ESA,USA/EU,Guidance,Yes
+SYS031,Satellite Communications,SATCOM,Multiple vendors,USA/Israel,C4ISR,Yes
+SYS032,Tactical Data Links,Data Link,L3Harris/Elbit,USA/Israel,C2,Yes
+SYS033,M270 MLRS,Rocket Artillery,Lockheed Martin,USA,Strike,Limited
+SYS034,Merkava Mk IV,Main Battle Tank,IMI/Elbit,Israel,Ground Operations,Yes
+SYS035,Namer APC,Armored Vehicle,IMI/Elbit,Israel,Ground Operations,Yes
+SYS036,D9 Bulldozer,Engineering Vehicle,Caterpillar,USA,Ground Operations,Yes
+SYS037,Cardom Mortar System,Mortar System,Elbit Systems,Israel,Ground Fire Support,Yes
+SYS038,ATMOS 2000,Artillery System,Elbit Systems,Israel,Ground Fire Support,Yes
+SYS039,Skylark UAV,Tactical UAV,Elbit Systems,Israel,Tactical ISR,Yes
+SYS040,RQ-4 Global Hawk (shared intel),Strategic UAV,Northrop Grumman,USA,Strategic ISR,Shared Intel

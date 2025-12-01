@@ -1,0 +1,28 @@
+investor_name,investor_type,country,total_investment_usd_millions,pct_ownership_f35_infrastructure,pct_ownership_f16_infrastructure,pct_ownership_f15_infrastructure,pct_ownership_munitions_infrastructure,pct_ownership_isr_uav_infrastructure,pct_ownership_targeting_infrastructure,pct_ownership_c4isr_infrastructure,pct_ownership_ground_systems_infrastructure,weighted_avg_killchain_ownership_pct,nbim_excluded_status
+BlackRock,Asset Manager,USA,137335,8.73,7.95,9.82,9.45,6.70,10.15,10.52,11.83,9.39,No
+Vanguard Group,Asset Manager,USA,127725,8.13,7.42,9.16,8.81,5.00,9.46,9.79,10.15,8.49,No
+State Street Corporation,Asset Manager,USA,79152,5.81,5.31,6.21,5.94,N/A,6.73,6.95,7.22,6.02,No
+Norges Bank (NBIM),Sovereign Wealth Fund,Norway,15344,1.23,1.17,1.29,1.25,0.00,1.36,1.36,1.31,1.12,Excluded Elbit
+Capital Group,Asset Manager,USA,72340,5.24,4.82,6.03,5.78,N/A,6.21,7.18,5.93,5.88,No
+Fidelity Investments,Asset Manager,USA,37730,2.74,2.52,3.15,3.02,N/A,3.29,3.48,N/A,2.89,No
+Geode Capital,Asset Manager,USA,6195,1.70,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.85,No
+Northern Trust,Asset Manager,USA,2565,N/A,N/A,2.40,N/A,N/A,N/A,N/A,N/A,0.30,No
+Wellington Management,Asset Manager,USA,5100,N/A,N/A,3.00,N/A,N/A,N/A,N/A,N/A,0.38,No
+T. Rowe Price,Asset Manager,USA,3440,N/A,N/A,N/A,4.70,N/A,N/A,N/A,N/A,0.59,No
+Invesco,Asset Manager,USA,1189,N/A,N/A,N/A,N/A,4.30,N/A,N/A,4.10,1.05,No
+Baillie Gifford,Asset Manager,UK,264,N/A,N/A,N/A,N/A,2.90,N/A,N/A,N/A,0.36,No
+Goldman Sachs,Investment Bank,USA,198,N/A,N/A,N/A,N/A,2.20,N/A,N/A,N/A,0.28,No
+Legal & General,Asset Manager,UK,4890,N/A,N/A,N/A,N/A,N/A,N/A,N/A,4.80,0.60,No
+JPMorgan Chase,Bank/Asset Manager,USA,N/A,1.20,1.10,1.35,1.25,N/A,1.40,1.45,1.50,1.28,No
+Bank of America,Bank/Asset Manager,USA,N/A,0.95,0.88,1.12,1.05,N/A,1.18,1.22,1.25,1.08,No
+Morgan Stanley,Investment Bank,USA,N/A,0.85,0.78,0.98,0.92,N/A,1.02,1.05,1.10,0.96,No
+UBS,Bank,Switzerland,N/A,0.65,0.60,0.75,0.70,N/A,0.78,0.82,0.85,0.74,No
+Deutsche Bank,Bank,Germany,N/A,0.45,0.42,0.52,0.48,N/A,0.54,0.56,0.58,0.51,No
+HSBC,Bank,UK,N/A,0.55,0.51,0.63,0.59,N/A,0.66,0.68,0.71,0.62,No
+Amundi,Asset Manager,France,N/A,0.72,0.66,0.83,0.77,N/A,0.86,0.89,0.93,0.81,No
+Allianz,Insurance/Asset Manager,Germany,N/A,0.88,0.81,1.01,0.94,N/A,1.05,1.09,1.13,0.99,No
+CalPERS,Pension Fund,USA,N/A,0.52,0.48,0.60,0.56,N/A,0.62,0.65,0.67,0.59,No
+CalSTRS,Pension Fund,USA,N/A,0.38,0.35,0.44,0.41,N/A,0.46,0.48,0.50,0.43,No
+New York State Common,Pension Fund,USA,N/A,0.42,0.39,0.48,0.45,N/A,0.50,0.52,0.54,0.47,No
+Government of Singapore,Sovereign Wealth Fund,Singapore,N/A,0.68,0.63,0.78,0.73,N/A,0.81,0.84,0.87,0.76,No
+Abu Dhabi Investment Authority,Sovereign Wealth Fund,UAE,N/A,0.58,0.53,0.67,0.62,N/A,0.69,0.72,0.75,0.65,No

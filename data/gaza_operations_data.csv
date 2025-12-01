@@ -1,0 +1,53 @@
+date,operation_type,munition_type,system_id,system_name,manufacturer_primary,estimated_units_used,estimated_cost_usd_millions,target_type,location_gaza,casualties_reported
+2023-10-07,Air Strike,JDAM,SYS009,JDAM,Boeing,850,21.25,Hamas Infrastructure,Gaza City,Multiple
+2023-10-07,Air Strike,Paveway,SYS010,Paveway,Raytheon,420,14.70,Hamas Infrastructure,Khan Younis,Multiple
+2023-10-07,Air Strike,SPICE 1000,SYS012,SPICE 1000,Rafael,180,32.40,Tunnels,Northern Gaza,Multiple
+2023-10-08,Air Strike,JDAM,SYS009,JDAM,Boeing,920,23.00,Residential/Hamas,Gaza City,Multiple
+2023-10-08,Air Strike,SPICE 2000,SYS013,SPICE 2000,Rafael,65,16.25,Command Centers,Khan Younis,Multiple
+2023-10-09,Air Strike,GBU-39 SDB,SYS014,GBU-39 SDB,Boeing,1200,84.00,Multiple Targets,Gaza Strip,Multiple
+2023-10-10,Air Strike,JDAM,SYS009,JDAM,Boeing,780,19.50,Residential,Jabaliya,Multiple
+2023-10-11,Air Strike,SPICE 1000,SYS012,SPICE 1000,Rafael,145,26.10,Tunnels,Rafah,Multiple
+2023-10-12,Air Strike,Paveway,SYS010,Paveway,Raytheon,380,13.30,Hamas Positions,Gaza City,Multiple
+2023-10-13,Air Strike,JDAM,SYS009,JDAM,Boeing,650,16.25,Residential,Khan Younis,Multiple
+2023-10-14,Air Strike,SPICE 250,SYS011,SPICE 250,Rafael,890,71.20,Urban Targets,Gaza City,Multiple
+2023-10-15,Air Strike,GBU-39 SDB,SYS014,GBU-39 SDB,Boeing,1150,80.50,Multiple Targets,Northern Gaza,Multiple
+2023-10-16,Ground Operation,Tank Round,SYS034,Merkava Mk IV,IMI/Elbit,2400,4.80,Urban Areas,Northern Gaza,Multiple
+2023-10-17,Artillery,Artillery Shell,SYS038,ATMOS 2000,Elbit Systems,3200,9.60,Residential,Beit Hanoun,Multiple
+2023-10-18,Air Strike,JDAM,SYS009,JDAM,Boeing,710,17.75,Hospital Area,Gaza City,Multiple
+2023-10-19,Air Strike,SPICE 1000,SYS012,SPICE 1000,Rafael,125,22.50,Refugee Camp,Jabaliya,Multiple
+2023-10-20,Loitering Munition,Harop,SYS018,Harop,IAI,45,6.75,Communications,Gaza Strip,Multiple
+2023-10-21,Air Strike,Paveway,SYS010,Paveway,Raytheon,340,11.90,Hamas Positions,Khan Younis,Multiple
+2023-10-22,Air Strike,JDAM,SYS009,JDAM,Boeing,580,14.50,Residential,Rafah,Multiple
+2023-10-23,Ground Operation,Bulldozer,SYS036,D9 Bulldozer,Caterpillar,N/A,N/A,Infrastructure Demolition,Northern Gaza,N/A
+2023-10-31,Air Strike,SPICE 2000,SYS013,SPICE 2000,Rafael,52,13.00,Refugee Camp,Jabaliya,195+ reported
+2023-11-01,Air Strike,JDAM,SYS009,JDAM,Boeing,620,15.50,Residential,Gaza City,Multiple
+2023-11-02,Air Strike,GBU-39 SDB,SYS014,GBU-39 SDB,Boeing,980,68.60,Multiple Targets,Khan Younis,Multiple
+2023-11-03,Artillery,Mortar,SYS037,Cardom,Elbit Systems,1800,3.60,Urban Areas,Beit Hanoun,Multiple
+2023-11-10,Air Strike,SPICE 1000,SYS012,SPICE 1000,Rafael,98,17.64,Hospital Complex,Gaza City,Multiple
+2023-11-15,Air Strike,JDAM,SYS009,JDAM,Boeing,540,13.50,Residential,Khan Younis,Multiple
+2023-11-22,Ground Operation,Tank Round,SYS034,Merkava Mk IV,IMI/Elbit,2100,4.20,Urban Combat,Khan Younis,Multiple
+2023-12-01,Air Strike,Paveway,SYS010,Paveway,Raytheon,290,10.15,Hamas Positions,Central Gaza,Multiple
+2023-12-05,Air Strike,SPICE 250,SYS011,SPICE 250,Rafael,720,57.60,Urban Targets,Khan Younis,Multiple
+2023-12-10,Air Strike,JDAM,SYS009,JDAM,Boeing,480,12.00,Residential,Rafah,Multiple
+2023-12-17,Air Strike,GBU-39 SDB,SYS014,GBU-39 SDB,Boeing,850,59.50,Multiple Targets,Gaza Strip,Multiple
+2023-12-24,Ground Operation,Bulldozer,SYS036,D9 Bulldozer,Caterpillar,N/A,N/A,Infrastructure Demolition,Khan Younis,N/A
+2024-01-05,Air Strike,SPICE 1000,SYS012,SPICE 1000,Rafael,82,14.76,Refugee Camp,Maghazi,Multiple
+2024-01-12,Air Strike,JDAM,SYS009,JDAM,Boeing,420,10.50,Residential,Khan Younis,Multiple
+2024-01-20,Artillery,Artillery Shell,SYS038,ATMOS 2000,Elbit Systems,2800,8.40,Residential,Rafah,Multiple
+2024-02-01,Air Strike,Paveway,SYS010,Paveway,Raytheon,260,9.10,Hamas Positions,Central Gaza,Multiple
+2024-02-08,Air Strike,SPICE 2000,SYS013,SPICE 2000,Rafael,38,9.50,Residential,Rafah,100+ reported
+2024-02-15,Air Strike,GBU-39 SDB,SYS014,GBU-39 SDB,Boeing,720,50.40,Multiple Targets,Khan Younis,Multiple
+2024-02-29,Air Strike,JDAM,SYS009,JDAM,Boeing,380,9.50,Aid Distribution,Gaza City,112+ reported
+2024-03-05,Ground Operation,Tank Round,SYS034,Merkava Mk IV,IMI/Elbit,1800,3.60,Urban Combat,Gaza City,Multiple
+2024-03-12,Air Strike,SPICE 250,SYS011,SPICE 250,Rafael,620,49.60,Residential,Nuseirat,Multiple
+2024-04-01,Air Strike,JDAM,SYS009,JDAM,Boeing,340,8.50,World Central Kitchen convoy,Deir al-Balah,7 aid workers
+2024-04-10,Air Strike,Paveway,SYS010,Paveway,Raytheon,220,7.70,Hamas Positions,Northern Gaza,Multiple
+2024-05-01,Air Strike,SPICE 1000,SYS012,SPICE 1000,Rafael,68,12.24,Residential,Rafah,Multiple
+2024-05-26,Air Strike,JDAM,SYS009,JDAM,Boeing,290,7.25,Displaced Camp,Rafah,45+ reported
+2024-06-08,Air Strike,GBU-39 SDB,SYS014,GBU-39 SDB,Boeing,580,40.60,UNRWA School,Nuseirat,40+ reported
+2024-07-10,Air Strike,SPICE 2000,SYS013,SPICE 2000,Rafael,28,7.00,School,Gaza City,Multiple
+2024-08-10,Air Strike,JDAM,SYS009,JDAM,Boeing,260,6.50,School/Mosque,Deir al-Balah,93+ reported
+2024-09-15,Air Strike,SPICE 1000,SYS012,SPICE 1000,Rafael,52,9.36,Residential,Khan Younis,Multiple
+2024-10-10,Air Strike,GBU-39 SDB,SYS014,GBU-39 SDB,Boeing,480,33.60,Multiple Targets,Northern Gaza,Multiple
+2024-10-20,Ground Operation,Bulldozer,SYS036,D9 Bulldozer,Caterpillar,N/A,N/A,Infrastructure Demolition,Jabaliya,Multiple
+2024-11-01,Air Strike,JDAM,SYS009,JDAM,Boeing,220,5.50,Residential,Beit Lahia,93+ reported

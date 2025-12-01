@@ -1,0 +1,67 @@
+component_id,system_id,system_name,component_name,manufacturer_id,manufacturer_name,component_role,estimated_value_per_unit_usd_millions
+COMP001,SYS001,F-35I Adir,Airframe,MFR001,Lockheed Martin,Primary Structure,85.0
+COMP002,SYS001,F-35I Adir,F135 Engine,MFR018,Pratt & Whitney (RTX),Propulsion,18.0
+COMP003,SYS001,F-35I Adir,AN/APG-81 AESA Radar,MFR004,Northrop Grumman,Sensors,12.0
+COMP004,SYS001,F-35I Adir,Avionics Suite,MFR016,Collins Aerospace (RTX),Electronics,8.5
+COMP005,SYS001,F-35I Adir,EO/IR Systems,MFR001,Lockheed Martin,Targeting,4.2
+COMP006,SYS001,F-35I Adir,Israeli Mission Systems,MFR005,Elbit Systems,Custom Electronics,5.0
+COMP007,SYS002,F-16I Sufa,Airframe,MFR001,Lockheed Martin,Primary Structure,25.0
+COMP008,SYS002,F-16I Sufa,F110 Engine,MFR009,General Electric,Propulsion,8.0
+COMP009,SYS002,F-16I Sufa,AN/APG-68 Radar,MFR004,Northrop Grumman,Sensors,3.5
+COMP010,SYS002,F-16I Sufa,Israeli Avionics,MFR005,Elbit Systems,Electronics,4.0
+COMP011,SYS003,F-15I Ra'am,Airframe,MFR002,Boeing,Primary Structure,35.0
+COMP012,SYS003,F-15I Ra'am,F110 Engines (x2),MFR009,General Electric,Propulsion,16.0
+COMP013,SYS003,F-15I Ra'am,AN/APG-70 Radar,MFR003,Raytheon,Sensors,5.0
+COMP014,SYS003,F-15I Ra'am,Israeli Mission Systems,MFR005,Elbit Systems,Electronics,6.0
+COMP015,SYS004,AH-64 Apache,Airframe,MFR002,Boeing,Primary Structure,18.0
+COMP016,SYS004,AH-64 Apache,T700 Engines (x2),MFR009,General Electric,Propulsion,4.5
+COMP017,SYS004,AH-64 Apache,Longbow Radar,MFR001,Lockheed Martin,Targeting,2.8
+COMP018,SYS004,AH-64 Apache,TADS/PNVS,MFR001,Lockheed Martin,Sensors,3.2
+COMP019,SYS005,Hermes 450,Complete System,MFR005,Elbit Systems,UAV,2.5
+COMP020,SYS006,Hermes 900,Complete System,MFR005,Elbit Systems,UAV,8.0
+COMP021,SYS007,Heron TP,Airframe & Systems,MFR006,IAI,UAV,15.0
+COMP022,SYS007,Heron TP,PT6A Engine,MFR018,Pratt & Whitney Canada,Propulsion,1.2
+COMP023,SYS008,Eitan UAV,Complete System,MFR006,IAI,UAV,20.0
+COMP024,SYS009,JDAM,Guidance Kit,MFR002,Boeing,Guidance,0.025
+COMP025,SYS010,Paveway,Guidance Kit,MFR003,Raytheon,Guidance,0.035
+COMP026,SYS011,SPICE 250,Complete Weapon,MFR007,Rafael,Munition,0.080
+COMP027,SYS012,SPICE 1000,Complete Weapon,MFR007,Rafael,Munition,0.180
+COMP028,SYS013,SPICE 2000,Complete Weapon,MFR007,Rafael,Munition,0.250
+COMP029,SYS014,GBU-39 SDB,Complete Weapon,MFR002,Boeing,Munition,0.070
+COMP030,SYS015,Spike NLOS,Complete Weapon,MFR007,Rafael,Missile,0.350
+COMP031,SYS016,Delilah,Complete Weapon,MFR006,IAI,Cruise Missile,0.400
+COMP032,SYS017,MARS II,Complete Weapon,MFR007,Rafael,Loitering Munition,0.120
+COMP033,SYS018,Harop,Complete Weapon,MFR006,IAI,Loitering Munition,0.150
+COMP034,SYS019,Iron Dome,Tamir Interceptor,MFR007,Rafael,Missile,0.050
+COMP035,SYS019,Iron Dome,Radar,MFR013,Elta (IAI),Sensors,8.0
+COMP036,SYS019,Iron Dome,BMC4I,MFR007,Rafael,C2,5.0
+COMP037,SYS019,Iron Dome,Launcher,MFR003,Raytheon,Platform,1.5
+COMP038,SYS020,Arrow 3,Interceptor,MFR006,IAI,Missile,2.5
+COMP039,SYS020,Arrow 3,Green Pine Radar,MFR013,Elta (IAI),Sensors,50.0
+COMP040,SYS020,Arrow 3,BMC4I,MFR002,Boeing,C2,25.0
+COMP041,SYS021,David's Sling,Stunner Interceptor,MFR007,Rafael,Missile,1.0
+COMP042,SYS021,David's Sling,MMR Radar,MFR013,Elta (IAI),Sensors,35.0
+COMP043,SYS021,David's Sling,BMDS Integration,MFR003,Raytheon,C2,20.0
+COMP044,SYS025,LITENING Pod,Complete Pod,MFR007,Rafael,Targeting,1.8
+COMP045,SYS025,LITENING Pod,US Production,MFR004,Northrop Grumman,Targeting,1.8
+COMP046,SYS026,Sniper ATP,Complete Pod,MFR001,Lockheed Martin,Targeting,2.2
+COMP047,SYS027,ELM-2084,Complete Radar,MFR013,Elta (IAI),Radar,25.0
+COMP048,SYS028,Green Pine,Complete Radar,MFR013,Elta (IAI),Radar,50.0
+COMP049,SYS029,Unit 8200 Infra,Servers/Computing,MFR009,Multiple (Dell/HP/IBM),IT Infrastructure,500.0
+COMP050,SYS029,Unit 8200 Infra,Software,MFR001,Multiple vendors,Software,200.0
+COMP051,SYS029,Unit 8200 Infra,Network Equipment,MFR008,Cisco/Juniper,Networking,150.0
+COMP052,SYS029,Unit 8200 Infra,Specialized SIGINT,MFR008,L3Harris/Elbit,SIGINT Hardware,300.0
+COMP053,SYS031,SATCOM,Satellite Terminals,MFR008,L3Harris,Communications,1.5
+COMP054,SYS031,SATCOM,Satellite Capacity,MFR001,Lockheed Martin/Others,Bandwidth,N/A
+COMP055,SYS032,Tactical Data Links,Link 16 Terminals,MFR008,L3Harris,Data Link,0.8
+COMP056,SYS032,Tactical Data Links,Israeli Systems,MFR005,Elbit Systems,Data Link,0.6
+COMP057,SYS034,Merkava Mk IV,Hull & Turret,MFR012,IMI Systems,Armor,3.5
+COMP058,SYS034,Merkava Mk IV,Fire Control,MFR005,Elbit Systems,Electronics,0.8
+COMP059,SYS034,Merkava Mk IV,Trophy APS,MFR007,Rafael,Active Protection,0.5
+COMP060,SYS035,Namer APC,Hull,MFR012,IMI Systems,Armor,2.0
+COMP061,SYS035,Namer APC,Electronics,MFR005,Elbit Systems,C4I,0.4
+COMP062,SYS036,D9 Bulldozer,Base Vehicle,MFR011,Caterpillar,Heavy Equipment,0.8
+COMP063,SYS036,D9 Bulldozer,Armor Kit,MFR012,IMI Systems,Armor,0.3
+COMP064,SYS037,Cardom,Complete System,MFR005,Elbit Systems,Artillery,2.5
+COMP065,SYS038,ATMOS 2000,Complete System,MFR005,Elbit Systems,Artillery,4.0
+COMP066,SYS039,Skylark,Complete System,MFR005,Elbit Systems,Tactical UAV,0.15
