@@ -189,18 +189,3 @@ python scripts/research_config.py
 | Aug 2025 | Caterpillar ekskludert |
 | Nov 2025 | Etikkrammeverket suspendert |
 
-## Lisens
-
-MIT License - Sjå [LICENSE](LICENSE)
-
-## Bidrag
-
-Bidrag er velkomne! Sjå [CONTRIBUTING.md](CONTRIBUTING.md) for retningslinjer.
-
-## Kontakt
-
-For spørsmål eller samarbeid, opne ein issue på GitHub.
-
----
-
-*Dette dokumentet er meint som ei oversikt for forskingsformål. Alle tal er estimat basert på tilgjengelege kjelder.*
